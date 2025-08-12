@@ -9,6 +9,9 @@ import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Services from "../components/Services";
 import ContactForm from "../components/ContactForm";
+import { SpeedIcon, PriceTagIcon, DrafterIcon } from "../components/icons/ServiceIcons";
+import WhyChooseUs from "../components/WhyChooseUs";
+
 
 // Assets
 import affordable from "../assets/affordable.png";
@@ -24,16 +27,16 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="pt-32 bg-gradient-to-br from-yellow-200 to-yellow-400 py-20 text-center"
+        className="pt-32 bg-gradient-to-br from-[#0A2540] via-[#1C3D5A] to-[#004E64] py-20 text-center text-white"
       >
-        <h1 className="text-5xl font-bold mb-4">
+        <h1 className="text-5xl font-extrabold mb-4 tracking-tight leading-tight">
           CAD Drafting Services for Your Needs
         </h1>
-        <p className="text-xl mb-6 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
           High-quality, on-time CAD drawings for Civil 3D, Residential Design,
-          Permit Plans and more.
+          Permit Plans, and more.
         </p>
-        <Button className="text-lg px-6 py-3 rounded-full bg-black text-white hover:bg-gray-800">
+        <Button className="text-lg px-8 py-3 rounded-full bg-yellow-400 text-black font-semibold shadow-md hover:bg-yellow-500 transition-all duration-300">
           Get a Quote
         </Button>
       </section>
@@ -42,23 +45,7 @@ export default function Home() {
       <Services />
 
       {/* Why Choose Us Section */}
-      <section id="why" className="py-16 bg-gray-100 px-6">
-        <h2 className="text-3xl font-semibold text-center mb-10">
-          Why Choose Us
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {[
-            { title: "Fast Turnaround", image: fast },
-            { title: "Affordable Pricing", image: affordable },
-            { title: "Skilled Drafters", image: drafters },
-          ].map(({ title, image }) => (
-            <div key={title} className="text-center">
-              <img src={image} alt={title} className="h-32 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold">{title}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
+      <WhyChooseUs />
 
       {/* Portfolio Section */}
       <Portfolio />

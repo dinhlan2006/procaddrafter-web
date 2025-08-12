@@ -32,8 +32,8 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-2">Contact</h4>
           <p>Email: procaddrafter.com@gmail.com</p>
-          <p>Phone: +84 377-779-435</p>
-          <p>Address: 274 Hau Giang Street, ward Binh Tay, Ho Chi Minh City, Viet Nam</p>
+          <p>Phone: +84 788 639 487</p>
+          <p>Address: Tòa Nhà An Phú Plaza, 117-119 Lý Chính Thắng, Phường Xuân Hòa, TP.HCM</p>
         </div>
       </div>
       <p className="text-center mt-10 text-gray-400 text-xs">

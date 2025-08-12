@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title">
+  <title>Fast Turnaround</title>
+  <defs>
+    <style>
+      .primary{stroke:#2563EB;}
+      .accent{stroke:#F59E0B;}
+      .muted{stroke:#93C5FD;}
+    </style>
+  </defs>
+
+  <!-- Clock -->
+  <circle cx="32" cy="32" r="14" class="primary" stroke-width="2"/>
+  <path d="M32 25v7l5 3" class="accent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Speed lines -->
+  <path d="M8 28h10M8 34h14M8 40h8" class="muted" stroke-width="2" stroke-linecap="round"/>
+</svg>
