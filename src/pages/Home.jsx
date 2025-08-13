@@ -9,22 +9,13 @@ import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Services from "../components/Services";
 import ContactForm from "../components/ContactForm";
-import { SpeedIcon, PriceTagIcon, DrafterIcon } from "../components/icons/ServiceIcons";
 import WhyChooseUs from "../components/WhyChooseUs";
-
-
-// Assets
-import affordable from "../assets/affordable.png";
-import fast from "../assets/fast.png";
-import drafters from "../assets/drafters.png";
 
 export default function Home() {
   return (
     <div className="bg-white text-gray-800">
-      {/* Header */}
       <Header />
 
-      {/* Hero Section */}
       <section
         id="hero"
         className="pt-32 bg-gradient-to-br from-[#0A2540] via-[#1C3D5A] to-[#004E64] py-20 text-center text-white"
@@ -41,31 +32,17 @@ export default function Home() {
         </Button>
       </section>
 
-      {/* Our Services */}
       <Services />
 
-      {/* Why Choose Us Section */}
+      {/* Sử dụng component WhyChooseUs mới làm */}
       <WhyChooseUs />
 
-      {/* Portfolio Section */}
       <Portfolio />
-
-      {/* Testimonials Section */}
       <Testimonials />
-
-      {/* CAD Services Section */}
       <CadServices />
-
-      {/* Get Started Section */}
       <GetStarted />
-
-      {/* FAQ Section */}
       <FAQ />
-
-      {/* ContactForm */}
       <ContactForm />
-
-      {/* Footer */}
       <Footer />
     </div>
   );
