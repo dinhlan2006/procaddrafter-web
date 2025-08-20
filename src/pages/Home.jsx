@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import Services from "../components/Services";
 import ContactForm from "../components/ContactForm";
 import WhyChooseUs from "../components/WhyChooseUs";
+import TrustedBy from "../components/TrustedBy";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
         </h1>
         <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
           High-quality, on-time CAD drawings for Civil 3D, Residential Design,
-          Permit Plans, and more.
+          Permit Plans, MEPF Drafting, and more.
         </p>
         <Button className="text-lg px-8 py-3 rounded-full bg-yellow-400 text-black font-semibold shadow-md hover:bg-yellow-500 transition-all duration-300">
           Get a Quote
@@ -34,9 +35,10 @@ export default function Home() {
 
       <Services />
 
-      {/* Sử dụng component WhyChooseUs mới làm */}
+      {/* Why choose procaddrafter */}
       <WhyChooseUs />
-
+      <TrustedBy />       
+      <Portfolio />
       <Portfolio />
       <Testimonials />
       <CadServices />
