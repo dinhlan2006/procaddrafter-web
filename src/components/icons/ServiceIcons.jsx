@@ -53,3 +53,14 @@ export const MEPFIcon = ({ className = "w-16 h-16" }) => (
     <path d="M48 14v4M46 18h4" stroke={accent} strokeWidth={stroke} strokeLinecap="round"/>
   </svg>
 );
+
+export const SpeedIcon = ({ className = "w-16 h-16" }) => (
+  <svg viewBox="0 0 64 64" className={className} fill="none" aria-hidden="true">
+    <title>Fast Turnaround</title>
+    {/* Đồng hồ */}
+    <circle cx="32" cy="32" r="18" stroke={primary} strokeWidth={stroke}/>
+    <path d="M32 20v12l8 4" stroke={accent} strokeWidth={stroke} strokeLinecap="round" strokeLinejoin="round"/>
+    {/* Vạch tốc độ */}
+    <path d="M10 32h-4M58 32h-4" stroke={gray} strokeWidth={stroke} strokeLinecap="round"/>
+  </svg>
+);
