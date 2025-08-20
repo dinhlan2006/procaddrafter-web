@@ -1,14 +1,8 @@
-// src/components/Services.jsx
 import { useEffect, useMemo, useState, useCallback } from "react";
 import ServiceDetails from "./ServiceDetails";
-
-// Vector icons (React components)
-import { Civil3DIcon, PermitIcon, ResidentialIcon } from "./icons/ServiceIcons";
-
-// Optional hero preview image shown in the modal
+import { Civil3DIcon, PermitIcon, ResidentialIcon, MEPFIcon } from "./icons/ServiceIcons";
 import portfolioFrame from "../assets/portfolio-frame.svg";
 
-/* ---------- Content config ---------- */
 const SERVICE_DATA = {
   civil3d: {
     key: "civil3d",
@@ -16,24 +10,23 @@ const SERVICE_DATA = {
     Icon: Civil3DIcon,
     hero: portfolioFrame,
     overview:
-      "We produce accurate plan & profile, grading, corridor, pipe network and quantity takeoff models using Autodesk Civil 3D. Deliverables are ready for permitting, bidding, and construction.",
+      "We produce accurate plan & profile, grading, corridor, pipe network and quantity takeoff models using Autodesk Civil3D.",
     points: [
       "Plan & Profile sheets for roads, utilities",
-      "Surface & corridor modeling (alignments, FG, assemblies)",
-      "Grading, cut/fill & material quantities",
-      "Pipe networks (storm, water, sanitary) with profiles",
-      "Sheet set organization and publishing",
-      "Sheet annotations, labels & tables per standards",
+      "Surface & corridor modeling",
+      "Cut/fill & material quantities",
+      "Pipe networks coordination",
+      "Sheet annotations & publishing"
     ],
     deliverables: [
-      "DWG (Civil 3D native) + Xrefs",
-      "PDF plan set (Sheet Set)",
-      "LandXML / CSV export (surfaces, alignments, points)",
-      "Quantity takeoff tables",
-      "CTB/STB + title block",
+      "DWG native + Xrefs",
+      "PDF sheet set",
+      "LandXML export",
+      "Quantity takeoff table",
+      "Titleblock + CTB"
     ],
-    software: ["Autodesk Civil 3D", "AutoCAD", "Bluebeam"],
-    standards: ["USCAD standards", "Client CAD standards", "AASHTO (when required)"],
+    software: ["Autodesk Civil3D", "AutoCAD"],
+    standards: ["USCAD", "Client standards"]
   },
 
   permit: {
@@ -41,23 +34,21 @@ const SERVICE_DATA = {
     title: "Permit Drawings",
     Icon: PermitIcon,
     hero: portfolioFrame,
-    overview:
-      "Code-compliant residential & light-commercial permit sets. We coordinate architectural, structural, and MEP notes for quick approval.",
+    overview: "Code-compliant residential & commercial permit sets.",
     points: [
-      "Site plan, floor plans, elevations",
-      "Door/window schedules & room tags",
-      "Basic structural notes (lateral/vertical)",
-      "MEP general notes & fixture layout (as required)",
-      "Title 24 or energy notes (if provided by client)",
+      "Floor plans, elevations",
+      "Door/window schedules",
+      "Structural & MEP notes",
+      "Energy compliance (if requested)"
     ],
     deliverables: [
-      "PDF full set for submission",
-      "DWG source files",
-      "Revisions tracked & clouded",
-      "City markups addressed",
+      "PDF submission set",
+      "DWG editable source",
+      "Revision clouds",
+      "City mark-ups addressed"
     ],
-    software: ["AutoCAD", "Revit (upon request)", "Bluebeam"],
-    standards: ["Local code notes (by client/city)", "Plot standards per city"],
+    software: ["AutoCAD", "Revit"],
+    standards: ["Local code", "Plot standards"]
   },
 
   residential: {
@@ -65,34 +56,51 @@ const SERVICE_DATA = {
     title: "Residential Design",
     Icon: ResidentialIcon,
     hero: portfolioFrame,
-    overview:
-      "Construction drawings for additions, ADUs, and new single-family homes. We prepare clear floor plans, elevations, sections, and details to build fast and safely.",
+    overview: "Drawings for houses, additions & ADUs.",
     points: [
-      "Space planning & schematic layout",
-      "Floor plans, elevations & building sections",
-      "Stair, door/window details",
-      "Interior elevations (kitchen, bath) when requested",
-      "Title block, index, sheet notes",
+      "Layout & space planning",
+      "Plans | Elevations | Sections",
+      "Kitchen/bath elevations",
+      "Stair & detail sheets"
     ],
     deliverables: [
       "PDF construction set",
-      "DWG source files",
-      "Detail sheets & schedules",
-      "Revisions log",
+      "DWG source",
+      "Schedules & details"
     ],
-    software: ["AutoCAD", "Revit (upon request)"],
-    standards: ["Client drafting standard", "City sheet naming & plotting"],
+    software: ["AutoCAD", "Revit"],
+    standards: ["Client drafting standard"]
   },
+
+  mepf: {
+    key: "mepf",
+    title: "MEPF Drafting",
+    Icon: MEPFIcon,
+    hero: portfolioFrame,
+    overview:
+      "MEP & Firefighting coordination drawings – clash-free and ready for construction.",
+    points: [
+      "HVAC routing & risers",
+      "Electrical trays & layouts",
+      "Plumbing supply/drainage",
+      "Sprinkler piping"
+    ],
+    deliverables: [
+      "Combined coordination drawing",
+      "PDF issue set",
+      "DWG source file"
+    ],
+    software: ["AutoCAD MEP", "Revit"],
+    standards: ["NFPA, ASHRAE, Client standards"]
+  }
 };
 
-/* ---------- Component ---------- */
 export default function Services() {
   const [open, setOpen] = useState(false);
   const [which, setWhich] = useState(null);
 
   const selected = useMemo(() => (which ? SERVICE_DATA[which] : null), [which]);
 
-  // Open modal if URL has hash (#civil3d / #permit / #residential)
   useEffect(() => {
     const hash = (window.location.hash || "").replace("#", "");
     if (hash && SERVICE_DATA[hash]) {
@@ -104,11 +112,10 @@ export default function Services() {
   const openCard = useCallback((key) => {
     setWhich(key);
     setOpen(true);
-    // update hash so you can share the link
-    window.history.replaceState?.(null, "", `#${key}`);
+    window.history.replaceState(null, "", `#${key}`);
   }, []);
 
-  const onCardKeyDown = useCallback(
+  const handleKeyDown = useCallback(
     (e, key) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -121,38 +128,31 @@ export default function Services() {
   const closeModal = useCallback(() => {
     setOpen(false);
     setWhich(null);
-    // clear hash
-    window.history.replaceState?.(
-      null,
-      "",
-      window.location.pathname + window.location.search
-    );
+    window.history.replaceState(null, "", window.location.pathname);
   }, []);
 
-  const CARDS = [SERVICE_DATA.civil3d, SERVICE_DATA.permit, SERVICE_DATA.residential];
+  const CARDS = Object.values(SERVICE_DATA);
 
   return (
     <>
       <section id="services" className="py-16 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold text-center mb-10">Our Services</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {CARDS.map(({ key, title, Icon }) => (
             <div
               key={key}
               role="button"
               tabIndex={0}
               onClick={() => openCard(key)}
-              onKeyDown={(e) => onCardKeyDown(e, key)}
-              aria-label={`View details for ${title}`}
-              className="group cursor-pointer rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm outline-none transition
-                         hover:-translate-y-0.5 hover:shadow-xl focus:ring-4 focus:ring-blue-200"
+              onKeyDown={(e) => handleKeyDown(e, key)}
+              className="group cursor-pointer rounded-2xl border bg-white p-6 text-center shadow-sm hover:shadow-xl transition-all"
             >
-              <div className="mx-auto mb-4 inline-flex h-20 w-20 items-center justify-center rounded-xl bg-sky-50 ring-1 ring-sky-100 transition group-hover:scale-[1.02]">
+              <div className="mx-auto mb-4 inline-flex h-20 w-20 items-center justify-center rounded-xl bg-sky-50 ring-1 ring-sky-100">
                 <Icon className="h-12 w-12 text-sky-600" />
               </div>
               <h3 className="text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-sm text-gray-600">Click to view details</p>
+              <p className="mt-1 text-sm text-gray-600">Click to view details</p>
             </div>
           ))}
         </div>
