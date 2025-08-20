@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import React from "react";
 import Header from "../components/Header";
 import { Button } from "../components/ui/button";
@@ -19,14 +20,21 @@ export default function Home() {
 
       <section
         id="hero"
-        className="pt-32 bg-gradient-to-br from-[#0A2540] via-[#1C3D5A] to-[#004E64] py-20 text-center text-white"
+        className="relative pt-32 bg-gradient-to-br from-[#0A2540] via-[#1C3D5A] to-[#004E64] py-20 text-center text-white"
       >
+        {/* Logo trong hero */}
+        <img
+          src="/logo-procad.png"
+          alt="Procad Drafter"
+          className="absolute left-8 top-12 w-40 md:w-48 drop-shadow-xl"
+        />
+
         <h1 className="text-5xl font-extrabold mb-4 tracking-tight leading-tight">
           CAD Drafting Services for Your Needs
         </h1>
         <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
           High-quality, on-time CAD drawings for Civil 3D, Residential Design,
-          Permit Plans, MEPF Drafting, and more.
+          Permit Plans, and more.
         </p>
         <Button className="text-lg px-8 py-3 rounded-full bg-yellow-400 text-black font-semibold shadow-md hover:bg-yellow-500 transition-all duration-300">
           Get a Quote
@@ -34,11 +42,8 @@ export default function Home() {
       </section>
 
       <Services />
-
-      {/* Why choose procaddrafter */}
       <WhyChooseUs />
-      <TrustedBy />       
-      <Portfolio />
+      <TrustedBy />
       <Portfolio />
       <Testimonials />
       <CadServices />
