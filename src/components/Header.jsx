@@ -1,18 +1,17 @@
+// src/components/Header.jsx
 import React, { useState } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         {/* Logo */}
-        <div className="text-2xl font-extrabold text-blue-900 tracking-tight">
-          <span className="text-[#f59b7f]">CAD</span>
-          <span className="text-[#6b7280]">RAfter</span>
-        </div>
+        <a href="#hero" className="flex items-center space-x-2">
+          <img src="/logo-procad.png" alt="ProcadDrafter" className="h-10 w-auto" />
+        </a>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 text-sm font-semibold text-gray-700">
