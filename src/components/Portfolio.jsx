@@ -3,50 +3,57 @@ import React, { useEffect, useRef, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+const ITEMS = [
+  { src: "/videos/civil3d.mp4", title: "Civil 3D Drafting", tag: "civil" },
+  { src: "/videos/residential.mp4", title: "Residential Design", tag: "residential" },
+  { src: "/videos/permit.mp4", title: "Permit Drawings", tag: "permit" },
+  { src: "/videos/mepf.mp4", title: "MEPF Drafting", tag: "mepf" }
+];
+
+const FILTERS = [
+  { label: "All", value: "all" },
+  { label: "Civil 3D", value: "civil" },
+  { label: "Residential", value: "residential" },
+  { label: "Permit", value: "permit" },
+  { label: "MEPF", value: "mepf" }
+];
+
 export default function Portfolio() {
-  const items = [
-    { src: "/videos/civil3d.mp4", title: "Civil 3D Drafting Animation" },
-    { src: "/videos/residential.mp4", title: "Residential Design Visualization" },
-    { src: "/videos/permit.mp4", title: "Permit Drawings (Commercial)" },
-    { src: "/videos/mepf.mp4", title: "MEPF Drafting Walkthrough" },
-  ];
+  const [index, setIndex] = useState(-1);
+  const [filter, setFilter] = useState("all");
+  const vids = useRef([]);
 
-  const [index, setIndex] = useState(-1); // lightbox index
-  const refs = useRef([]); // reference tới video html
-
-  // Tự động play/pause khi element trong vùng nhìn thấy
+  // autoPlay/pause khi scroll
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const vid = entry.target;
-          if (entry.isIntersecting) {
-            vid.play().catch(() => {});
-          } else {
-            vid.pause();
-          }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const v = entry.target;
+          if (entry.isIntersecting) v.play().catch(() => {});
+          else v.pause();
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.3 }
     );
-
-    refs.current.forEach(r => r && observer.observe(r));
-    return () => observer.disconnect();
+    vids.current.forEach((el) => el && io.observe(el));
+    return () => io.disconnect();
   }, []);
 
-  // render slide video trong Lightbox
   const renderVideo = ({ slide }) => (
     <video
+      src={slide.src}
       controls
       autoPlay
       muted
       loop
       playsInline
       style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-    >
-      <source src={slide.src} type="video/mp4" />
-    </video>
+    />
   );
+
+  const filtered = filter === "all"
+    ? ITEMS
+    : ITEMS.filter((i) => i.tag === filter);
 
   return (
     <section id="portfolio" className="py-20 px-6 bg-white">
@@ -54,36 +61,51 @@ export default function Portfolio() {
         Portfolio & Samples
       </h2>
 
+      {/* FILTER BAR */}
+      <div className="flex justify-center mb-8 gap-4 flex-wrap">
+        {FILTERS.map((f) => (
+          <button
+            key={f.value}
+            onClick={() => setFilter(f.value)}
+            className={`px-4 py-2 rounded-full border transition
+            ${filter === f.value ? "bg-black text-white" : "bg-white text-gray-700 hover:bg-gray-100"}`}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      {/* GALLERY */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {items.map((item, i) => (
+        {filtered.map((item, i) => (
           <div
             key={i}
             onClick={() => setIndex(i)}
-            className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+            className="rounded-xl overflow-hidden shadow hover:shadow-2xl transition cursor-pointer"
           >
             <video
-              ref={el => (refs.current[i] = el)}
+              ref={(el) => (vids.current[i] = el)}
               src={item.src}
               muted
-              playsInline
               loop
-              // tự chạy
               autoPlay
+              playsInline
+              className="w-full h-48 object-cover"
               poster="/assets/portfolio-frame.svg"
-              className="w-full object-cover"
             />
             <div className="p-4 text-center font-medium">{item.title}</div>
           </div>
         ))}
       </div>
 
-      {/* lightbox video */}
+      {/* Lightbox */}
       <Lightbox
         open={index >= 0}
         close={() => setIndex(-1)}
         index={index}
-        slides={items}
-        render={{ slide: renderVideo }}
+        slides={filtered.map((v) => ({ ...v, type: "video" }))}
+        render={{ video: renderVideo }}
+        controller={{ autoplay: true }}
       />
     </section>
   );
