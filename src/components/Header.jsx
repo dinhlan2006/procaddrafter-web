@@ -9,10 +9,7 @@ export default function Header() {
     <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         {/* Logo */}
-        <a href="#hero" className="flex items-center space-x-2">
-          <img src="/logo-procad.png" alt="ProcadDrafter" className="h-10 w-auto" />
-        </a>
-
+        
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 text-sm font-semibold text-gray-700">
           <a href="#hero" className="hover:text-[#f59b7f] transition">Home</a>
