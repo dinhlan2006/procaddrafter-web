@@ -4,7 +4,7 @@ export default function TrustedBy() {
   const logos = [
     "/logos/buildsmart.svg",
     "/logos/urbanworks.svg",
-    "/logos/architechtive.svg",
+    "/logos/architective.svg",
     "/logos/mepf.svg",
   ];
 
