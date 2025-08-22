@@ -2,104 +2,129 @@
 import React, { useEffect, useRef, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import frame from "../assets/portfolio-frame.svg"; // <- quan trọng
+import frame from "../assets/portfolio-frame.svg"; // poster image (in src/assets)
 
 const ITEMS = [
-  { src: "/videos/civil3d.mp4", title: "Civil 3D Drafting", tag: "civil" },
-  { src: "/videos/residential.mp4", title: "Residential Design", tag: "residential" },
-  { src: "/videos/permit.mp4", title: "Permit Drawings", tag: "permit" },
-  { src: "/videos/mepf.mp4", title: "MEPF Drafting", tag: "mepf" },
+  { id: 1, tag: "civil",       title: "Civil 3D Drafting",     src: "/videos/civil3d.mp4" },
+  { id: 2, tag: "residential", title: "Residential Design",    src: "/videos/residential.mp4" },
+  { id: 3, tag: "permit",      title: "Permit Drawings",       src: "/videos/permit.mp4" },
+  { id: 4, tag: "mepf",        title: "MEPF Drafting",         src: "/videos/mepf.mp4" },
 ];
 
 const FILTERS = [
-  { label: "All", value: "all" },
-  { label: "Civil 3D", value: "civil" },
+  { label: "All",         value: "all" },
+  { label: "Civil 3D",    value: "civil" },
   { label: "Residential", value: "residential" },
-  { label: "Permit", value: "permit" },
-  { label: "MEPF", value: "mepf" },
+  { label: "Permit",      value: "permit" },
+  { label: "MEPF",        value: "mepf" },
 ];
 
 export default function Portfolio() {
-  const [index, setIndex] = useState(-1);
   const [filter, setFilter] = useState("all");
-  const vids = useRef([]);
+  const [openIndex, setOpenIndex] = useState(-1); // index inside the *filtered* array
+  const videoRefs = useRef([]);                   // HTMLVideoElement[]
 
+  const filtered =
+    filter === "all" ? ITEMS : ITEMS.filter((i) => i.tag === filter);
+
+  // Autoplay/pause when cards enter/leave viewport
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const v = entry.target;
-          if (entry.isIntersecting && typeof v.play === "function") v.play().catch(() => {});
-          else v.pause();
+          if (entry.isIntersecting) {
+            typeof v.play === "function" && v.play().catch(() => {});
+          } else {
+            v.pause?.();
+          }
         });
       },
       { threshold: 0.3 }
     );
-    vids.current.forEach((el) => el && io.observe(el));
-    return () => io.disconnect();
-  }, []);
 
+    // observe current rendered videos
+    videoRefs.current.forEach((el) => el && io.observe(el));
+
+    return () => io.disconnect();
+  }, [filter]); // re-attach when filter changes
+
+  // Render <video> inside Lightbox
   const renderVideo = ({ slide }) => (
     <video
-      src={slide.src}
       controls
       autoPlay
       muted
       loop
       playsInline
       style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-    />
+    >
+      <source src={slide.src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
-
-  const filtered = filter === "all" ? ITEMS : ITEMS.filter((i) => i.tag === filter);
 
   return (
     <section id="portfolio" className="py-20 px-6 bg-white">
-      <h2 className="text-3xl font-semibold text-center mb-10">Portfolio & Samples</h2>
+      <h2 className="text-3xl font-semibold text-center mb-10">
+        Portfolio &amp; Samples
+      </h2>
 
-      <div className="flex justify-center mb-8 gap-4 flex-wrap">
+      {/* Filter bar */}
+      <div className="flex justify-center mb-8 gap-3 flex-wrap">
         {FILTERS.map((f) => (
           <button
             key={f.value}
-            onClick={() => setFilter(f.value)}
-            className={`px-4 py-2 rounded-full border transition ${
-              filter === f.value ? "bg-black text-white" : "bg-white text-gray-700 hover:bg-gray-100"
-            }`}
+            onClick={() => {
+              setFilter(f.value);
+              setOpenIndex(-1);
+            }}
+            className={`px-4 py-2 rounded-full border transition
+              ${
+                filter === f.value
+                  ? "bg-black text-white border-black"
+                  : "bg-white text-gray-700 hover:bg-gray-100 border-gray-200"
+              }`}
           >
             {f.label}
           </button>
         ))}
       </div>
 
+      {/* Gallery */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {filtered.map((item, i) => (
           <div
-            key={i}
-            onClick={() => setIndex(i)}
-            className="rounded-xl overflow-hidden shadow hover:shadow-2xl transition cursor-pointer"
+            key={item.id}
+            onClick={() => setOpenIndex(i)}
+            className="rounded-2xl overflow-hidden shadow hover:shadow-2xl transition cursor-pointer bg-white ring-1 ring-gray-100"
           >
             <video
-              ref={(el) => (vids.current[i] = el)}
-              src={item.src}
+              ref={(el) => (videoRefs.current[i] = el)}
+              className="w-full h-48 object-cover bg-gray-100"
+              preload="metadata"
               muted
               loop
-              autoPlay
               playsInline
-              className="w-full h-48 object-cover"
               poster={frame}
-            />
+            >
+              <source src={item.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
             <div className="p-4 text-center font-medium">{item.title}</div>
           </div>
         ))}
       </div>
 
+      {/* Lightbox */}
       <Lightbox
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        index={index}
-        slides={filtered.map((v) => ({ ...v, type: "video" }))}
+        open={openIndex >= 0}
+        close={() => setOpenIndex(-1)}
+        index={openIndex}
+        slides={filtered.map((v) => ({ src: v.src, type: "video" }))}
         render={{ video: renderVideo }}
-        controller={{ autoplay: true }}
+        controller={{ closeOnBackdropClick: true }}
       />
     </section>
   );
