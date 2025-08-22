@@ -2,13 +2,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import posterFrame from "../assets/portfolio-frame.svg";
 
+// Poster ảnh khung (đúng: nằm trong src/assets, import để Vite xử lý)
+import frame from "../assets/portfolio-frame.svg";
+
+// Danh sách video (nằm trong public/videos => dùng /videos/...)
 const ITEMS = [
-  { id: 1, tag: "civil",       title: "Civil 3D Drafting",  src: "/videos/civil3d.mp4" },
-  { id: 2, tag: "residential", title: "Residential Design", src: "/videos/residential.mp4" },
-  { id: 3, tag: "permit",      title: "Permit Drawings",    src: "/videos/permit.mp4" },
-  { id: 4, tag: "mepf",        title: "MEPF Drafting",      src: "/videos/mepf.mp4" },
+  { src: "/videos/civil3d.mp4", title: "Civil 3D Drafting", tag: "civil" },
+  { src: "/videos/residential.mp4", title: "Residential Design", tag: "residential" },
+  { src: "/videos/permit.mp4", title: "Permit Drawings", tag: "permit" },
+  { src: "/videos/mepf.mp4", title: "MEPF Drafting", tag: "mepf" },
 ];
 
 const FILTERS = [
@@ -20,111 +23,112 @@ const FILTERS = [
 ];
 
 export default function Portfolio() {
+  const [index, setIndex] = useState(-1);
   const [filter, setFilter] = useState("all");
-  const [openIndex, setOpenIndex] = useState(-1);
-  const videoRefs = useRef([]); // HTMLVideoElement[]
 
-  const filtered = filter === "all" ? ITEMS : ITEMS.filter(i => i.tag === filter);
+  // Mảng ref video cho các card đang hiển thị
+  const vids = useRef([]);
 
-  // observe & auto play/pause
+  // Khi filter đổi, reset mảng ref để tránh lệch index cũ
+  useEffect(() => {
+    vids.current = [];
+  }, [filter]);
+
+  // Auto play/pause khi scroll
   useEffect(() => {
     const io = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           const v = entry.target;
           if (entry.isIntersecting) {
-            // Ép load rồi play (một số trình duyệt không tải khi chưa play)
-            try { v.load?.(); } catch {}
             if (typeof v.play === "function") v.play().catch(() => {});
           } else {
-            v.pause?.();
+            v.pause();
           }
         });
       },
-      {
-        threshold: 0.2,
-        rootMargin: "200px 0px 200px 0px", // kích hoạt sớm
-      }
+      { threshold: 0.3 }
     );
 
-    // attach observer cho các video đang render
-    videoRefs.current.forEach(el => el && io.observe(el));
+    vids.current.forEach((el) => el && io.observe(el));
     return () => io.disconnect();
   }, [filter]);
 
-  // Lightbox video slide
+  // Lightbox render video
   const renderVideo = ({ slide }) => (
     <video
+      src={slide.src}
       controls
       autoPlay
       muted
       loop
       playsInline
       style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-    >
-      <source src={slide.src} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    />
   );
+
+  const filtered =
+    filter === "all" ? ITEMS : ITEMS.filter((i) => i.tag === filter);
 
   return (
     <section id="portfolio" className="py-20 px-6 bg-white">
       <h2 className="text-3xl font-semibold text-center mb-10">
-        Portfolio &amp; Samples
+        Portfolio & Samples
       </h2>
 
-      {/* Filters */}
-      <div className="flex justify-center mb-8 gap-3 flex-wrap">
-        {FILTERS.map(f => (
+      {/* FILTER BAR */}
+      <div className="flex justify-center mb-8 gap-4 flex-wrap">
+        {FILTERS.map((f) => (
           <button
             key={f.value}
-            onClick={() => { setFilter(f.value); setOpenIndex(-1); }}
-            className={`px-4 py-2 rounded-full border transition
-              ${filter === f.value
-                ? "bg-black text-white border-black"
-                : "bg-white text-gray-700 hover:bg-gray-100 border-gray-200"}`}
+            onClick={() => setFilter(f.value)}
+            className={`px-4 py-2 rounded-full border transition ${
+              filter === f.value
+                ? "bg-black text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
+            }`}
           >
             {f.label}
           </button>
         ))}
       </div>
 
-      {/* Gallery */}
+      {/* GALLERY */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {(() => { videoRefs.current = []; return null; })()}
         {filtered.map((item, i) => (
           <div
-            key={item.id}
-            onClick={() => setOpenIndex(i)}
-            onMouseEnter={() => videoRefs.current[i]?.play?.().catch(() => {})}
-            className="rounded-2xl overflow-hidden shadow hover:shadow-2xl transition cursor-pointer bg-white ring-1 ring-gray-100"
+            key={item.src} // key theo src để React mount/unmount đúng khi filter
+            onClick={() => setIndex(i)}
+            className="rounded-xl overflow-hidden shadow hover:shadow-2xl transition cursor-pointer"
           >
             <video
-              ref={el => (videoRefs.current[i] = el)}
-              className="w-full h-48 object-cover bg-gray-100"
-              poster={posterFrame}
-              // các cờ để auto-play ổn định
+              ref={(el) => (vids.current[i] = el)}
+              src={item.src}
               muted
               loop
               playsInline
-              autoPlay
-              preload="auto"
-            >
-              <source src={item.src} type="video/mp4" />
-            </video>
+              preload="auto"            // ép trình duyệt tải để có frame hiển thị
+              poster={frame}            // poster import đúng cách
+              className="w-full h-48 object-cover bg-gray-100"
+              onLoadedData={(e) => {
+                // đảm bảo frame hiển thị ngay khi dữ liệu đã sẵn sàng
+                const v = e.currentTarget;
+                if (v.paused) v.currentTime = 0.01;
+              }}
+            />
             <div className="p-4 text-center font-medium">{item.title}</div>
           </div>
         ))}
       </div>
 
-      {/* Lightbox */}
+      {/* LIGHTBOX */}
       <Lightbox
-        open={openIndex >= 0}
-        close={() => setOpenIndex(-1)}
-        index={openIndex}
-        slides={filtered.map(v => ({ src: v.src, type: "video" }))}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+        index={index}
+        slides={filtered.map((v) => ({ ...v, type: "video" }))}
         render={{ video: renderVideo }}
-        controller={{ closeOnBackdropClick: true }}
+        controller={{ autoplay: true }}
       />
     </section>
   );
