@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro CAD Drafter - Samples</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; color: #333; background-color: #f4f4f4; }
+        header { background-color: #001f3f; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; }
+        .sidebar { width: 250px; background-color: #fff; padding: 20px; position: absolute; top: 80px; left: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .sidebar h3 { color: #001f3f; font-size: 18px; margin-bottom: 10px; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar ul li { margin-bottom: 5px; }
+        .sidebar ul li a { color: #f0ad4e; text-decoration: none; }
+        .content { margin-left: 280px; padding: 20px; color: #001f3f; }
+        .hero { background-color: #001f3f; color: white; text-align: center; padding: 60px 20px; }
+        .hero h1 { font-size: 36px; margin-bottom: 20px; }
+        .hero p { max-width: 800px; margin: 0 auto 30px; }
+        .services { padding: 40px 20px; }
+        .services-content { padding: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .gallery-item { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        .gallery-item img { max-width: 100%; height: auto; }
+        @media (max-width: 768px) { .sidebar { position: static; width: 100%; } .content { margin-left: 0; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">CAD DRAFTER</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="samples.html">Samples</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sidebar">
+        <h3>CAD Services</h3>
+        <ul>
+            <li><a href="#sample-2d-drafting">2D Drafting Services</a></li>
+            <li><a href="#sample-3d-drafting">3D Drafting Services</a></li>
+            <li><a href="#sample-mep-drafting">MEP Drafting Services</a></li>
+            <li><a href="#sample-mechanical-drafting">Mechanical Drafting Services</a></li>
+            <li><a href="#sample-civil-drafting">Civil Drafting Services</a></li>
+            <li><a href="#sample-architectural-drafting">Architectural Drafting Services</a></li>
+            <li><a href="#sample-hvac-drafting">HVAC Drafting Services</a></li>
+            <li><a href="#sample-electrical-drafting">Electrical Drafting Services</a></li>
+            <li><a href="#sample-residential-drafting">Residential Drafting Services</a></li>
+            <li><a href="#sample-cad-conversion">CAD Conversion Services</a></li>
+            <li><a href="#sample-pdf-to-cad">PDF to CAD Conversion Services</a></li>
+            <li><a href="#sample-3d-scan">3D Scan to CAD Service</a></li>
+        </ul>
+        <h3>Design Services</h3>
+        <ul>
+            <li><a href="#sample-3d-cad-design">3D CAD Design Services</a></li>
+            <li><a href="#sample-mechanical-design">Mechanical Design Services</a></li>
+            <li><a href="#sample-interior-drafting">Interior Design Drafting Services</a></li>
+            <li><a href="#sample-interior-design">Interior Design Services</a></li>
+            <li><a href="#sample-exterior-design">Exterior Design Services</a></li>
+            <li><a href="#sample-autocad-drawing">AutoCAD Drawing Services</a></li>
+            <li><a href="#sample-contract-drafting">Contract Drafting Services</a></li>
+            <li><a href="#sample-2d-to-3d">2D to 3D Conversion Services</a></li>
+            <li><a href="#sample-landscape-design">Landscape Design Services</a></li>
+            <li><a href="#sample-autocad-design">AutoCAD Design Services</a></li>
+            <li><a href="#sample-commercial-design">Commercial Design Services</a></li>
+            <li><a href="#sample-cad-digitization">CAD Digitization Services</a></li>
+            <li><a href="#sample-building-measurement">Building Measurement Services</a></li>
+            <li><a href="#sample-shop-drawing">Shop Drawing Services</a></li>
+            <li><a href="#sample-swimming-pool">Swimming Pool Design</a></li>
+            <li><a href="#sample-home-design">Home Design Services</a></li>
+        </ul>
+        <h3>Rendering Services</h3>
+        <ul>
+            <li><a href="#sample-3d-real-estate">3D Real Estate Rendering</a></li>
+            <li><a href="#sample-3d-floor-plan">3D Floor Plan Rendering Services</a></li>
+            <li><a href="#sample-photorealistic">Photorealistic Rendering Services</a></li>
+            <li><a href="#sample-3d-product">3D Product Rendering Service</a></li>
+            <li><a href="#sample-3d-rendering">3D Rendering Services</a></li>
+            <li><a href="#sample-3d-exterior">3D Exterior Rendering Services</a></li>
+            <li><a href="#sample-3d-furniture">3D Furniture Rendering</a></li>
+            <li><a href="#sample-3d-visualization">3D Visualization Services</a></li>
+            <li><a href="#sample-3d-home">3D Home Rendering Services</a></li>
+            <li><a href="#sample-millwork">Millwork Drafting Services</a></li>
+            <li><a href="#sample-civil-engineering">Civil Engineering Services</a></li>
+            <li><a href="#sample-solar-design">Solar Design Services</a></li>
+            <li><a href="#sample-glazing">Glazing Shop Drawings Services</a></li>
+            <li><a href="#sample-clash-coordination">Clash Coordination Services</a></li>
+        </ul>
+        <h3>Architectural Modeling Services</h3>
+        <ul>
+            <li><a href="#sample-architectural-3d">Architectural 3D Modeling Services</a></li>
+            <li><a href="#sample-architectural-bim">Architectural BIM Services</a></li>
+            <li><a href="#sample-site-plans">Architectural Site Plans</a></li>
+            <li><a href="#sample-steel-detailing">Structural Steel Detailing</a></li>
+            <li><a href="#sample-bim-modeling">BIM Modeling Services</a></li>
+            <li><a href="#sample-point-cloud">Point Cloud Modeling Services</a></li>
+            <li><a href="#sample-outsourcing">Outsourcing Services</a></li>
+            <li><a href="#sample-coordination">Coordination Services</a></li>
+            <li><a href="#sample-virtual-design">Virtual Design And Construction</a></li>
+            <li><a href="#sample-renovation">Renovation Design Services</a></li>
+            <li><a href="#sample-architectural-rendering">Architectural Rendering Services</a></li>
+            <li><a href="#sample-architectural-design">Architectural Design Services</a></li>
+            <li><a href="#sample-architectural-engineering">Architectural Engineering Services</a></li>
+            <li><a href="#sample-structural-design">Structural Design/Drafting Services</a></li>
+            <li><a href="#sample-tekla-detailing">Tekla Detailing Services</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <section class="hero">
+            <h1>Project Samples</h1>
+            <p>View high-quality samples from our portfolio, corresponding to each service in the sidebar.</p>
+        </section>
+
+        <section class="services">
+            <div class="services-content">
+                <h2>Samples Gallery</h2>
+                <div class="gallery">
+                    <div class="gallery-item" id="sample-2d-drafting">
+                        <h4>2D Drafting Sample</h4>
+                        <img src="images/sample-2d-drafting.jpg" alt="Sample for 2D Drafting Services - A precise floor plan blueprint.">
+                        <p>A sample 2D floor plan for a residential building, showcasing accurate measurements and details.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-drafting">
+                        <h4>3D Drafting Sample</h4>
+                        <img src="images/sample-3d-drafting.jpg" alt="Sample for 3D Drafting Services - 3D building model.">
+                        <p>A 3D model of a commercial structure, highlighting volume and spatial relationships.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-mep-drafting">
+                        <h4>MEP Drafting Sample</h4>
+                        <img src="images/sample-mep-drafting.jpg" alt="Sample for MEP Drafting Services - Plumbing and electrical schematic.">
+                        <p>A sample MEP layout for an office building, showing integrated systems.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-mechanical-drafting">
+                        <h4>Mechanical Drafting Sample</h4>
+                        <img src="images/sample-mechanical-drafting.jpg" alt="Sample for Mechanical Drafting Services - Mechanical component drawing.">
+                        <p>A detailed drawing of a mechanical gear assembly, demonstrating precision engineering.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-civil-drafting">
+                        <h4>Civil Drafting Sample</h4>
+                        <img src="images/sample-civil-drafting.jpg" alt="Sample for Civil Drafting Services - Civil engineering blueprint.">
+                        <p>A blueprint for a road project, showcasing civil engineering accuracy.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-architectural-drafting">
+                        <h4>Architectural Drafting Sample</h4>
+                        <img src="images/sample-architectural-drafting.jpg" alt="Sample for Architectural Drafting Services - Architectural floor plan.">
+                        <p>A detailed architectural plan for a residential home.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-hvac-drafting">
+                        <h4>HVAC Drafting Sample</h4>
+                        <img src="images/sample-hvac-drafting.jpg" alt="Sample for HVAC Drafting Services - HVAC system layout.">
+                        <p>A sample HVAC design for a commercial space, optimizing airflow.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-electrical-drafting">
+                        <h4>Electrical Drafting Sample</h4>
+                        <img src="images/sample-electrical-drafting.jpg" alt="Sample for Electrical Drafting Services - Electrical wiring diagram.">
+                        <p>An electrical schematic for a residential building, ensuring safety.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-residential-drafting">
+                        <h4>Residential Drafting Sample</h4>
+                        <img src="images/sample-residential-drafting.jpg" alt="Sample for Residential Drafting Services - House blueprint.">
+                        <p>A residential house plan with detailed room layouts.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-cad-conversion">
+                        <h4>CAD Conversion Sample</h4>
+                        <img src="images/sample-cad-conversion.jpg" alt="Sample for CAD Conversion Services - Converted blueprint.">
+                        <p>A manual drawing converted to digital CAD format.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-pdf-to-cad">
+                        <h4>PDF to CAD Sample</h4>
+                        <img src="images/sample-pdf-to-cad.jpg" alt="Sample for PDF to CAD Conversion Services - Converted PDF drawing.">
+                        <p>A PDF blueprint converted into an editable CAD file.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-scan">
+                        <h4>3D Scan Sample</h4>
+                        <img src="images/sample-3d-scan.jpg" alt="Sample for 3D Scan to CAD Service - 3D scanned model.">
+                        <p>A 3D scanned model of an existing building structure.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-cad-design">
+                        <h4>3D CAD Design Sample</h4>
+                        <img src="images/sample-3d-cad-design.jpg" alt="Sample for 3D CAD Design Services - 3D product model.">
+                        <p>A 3D model of a product design for prototyping.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-mechanical-design">
+                        <h4>Mechanical Design Sample</h4>
+                        <img src="images/sample-mechanical-design.jpg" alt="Sample for Mechanical Design Services - Mechanical part model.">
+                        <p>A 3D model of a mechanical component with detailed design.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-interior-drafting">
+                        <h4>Interior Design Drafting Sample</h4>
+                        <img src="images/sample-interior-drafting.jpg" alt="Sample for Interior Design Drafting Services - Interior layout.">
+                        <p>An interior layout plan for a modern living space.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-interior-design">
+                        <h4>Interior Design Sample</h4>
+                        <img src="images/sample-interior-design.jpg" alt="Sample for Interior Design Services - Rendered interior.">
+                        <p>A rendered interior of a stylish living room.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-exterior-design">
+                        <h4>Exterior Design Sample</h4>
+                        <img src="images/sample-exterior-design.jpg" alt="Sample for Exterior Design Services - Building facade.">
+                        <p>A 3D render of a building exterior design.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-autocad-drawing">
+                        <h4>AutoCAD Drawing Sample</h4>
+                        <img src="images/sample-autocad-drawing.jpg" alt="Sample for AutoCAD Drawing Services - AutoCAD drawing.">
+                        <p>A detailed AutoCAD drawing of a structural element.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-contract-drafting">
+                        <h4>Contract Drafting Sample</h4>
+                        <img src="images/sample-contract-drafting.jpg" alt="Sample for Contract Drafting Services - Contract blueprint.">
+                        <p>A blueprint with contract-specific annotations.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-2d-to-3d">
+                        <h4>2D to 3D Conversion Sample</h4>
+                        <img src="images/sample-2d-to-3d.jpg" alt="Sample for 2D to 3D Conversion Services - 2D to 3D transition.">
+                        <p>A 2D plan converted into a 3D model.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-landscape-design">
+                        <h4>Landscape Design Sample</h4>
+                        <img src="images/sample-landscape-design.jpg" alt="Sample for Landscape Design Services - Garden layout.">
+                        <p>A 3D render of a garden landscape design.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-autocad-design">
+                        <h4>AutoCAD Design Sample</h4>
+                        <img src="images/sample-autocad-design.jpg" alt="Sample for AutoCAD Design Services - AutoCAD design.">
+                        <p>A custom AutoCAD design for a mechanical part.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-commercial-design">
+                        <h4>Commercial Design Sample</h4>
+                        <img src="images/sample-commercial-design.jpg" alt="Sample for Commercial Design Services - Commercial interior.">
+                        <p>A 3D render of a commercial office interior.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-cad-digitization">
+                        <h4>CAD Digitization Sample</h4>
+                        <img src="images/sample-cad-digitization.jpg" alt="Sample for CAD Digitization Services - Digitized drawing.">
+                        <p>A digitized version of a hand-drawn blueprint.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-building-measurement">
+                        <h4>Building Measurement Sample</h4>
+                        <img src="images/sample-building-measurement.jpg" alt="Sample for Building Measurement Services - Measurement data.">
+                        <p>A laser measurement scan of a building interior.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-shop-drawing">
+                        <h4>Shop Drawing Sample</h4>
+                        <img src="images/sample-shop-drawing.jpg" alt="Sample for Shop Drawing Services - Steel shop drawing.">
+                        <p>A detailed shop drawing for a steel structure.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-swimming-pool">
+                        <h4>Swimming Pool Design Sample</h4>
+                        <img src="images/sample-swimming-pool.jpg" alt="Sample for Swimming Pool Design - Pool render.">
+                        <p>A 3D render of a residential swimming pool design.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-home-design">
+                        <h4>Home Design Sample</h4>
+                        <img src="images/sample-home-design.jpg" alt="Sample for Home Design Services - House render.">
+                        <p>A 3D render of a modern home interior design.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-real-estate">
+                        <h4>3D Real Estate Sample</h4>
+                        <img src="images/sample-3d-real-estate.jpg" alt="Sample for 3D Real Estate Rendering - Real estate render.">
+                        <p>A realistic 3D render of a property for marketing.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-floor-plan">
+                        <h4>3D Floor Plan Sample</h4>
+                        <img src="images/sample-3d-floor-plan.jpg" alt="Sample for 3D Floor Plan Rendering Services - Floor plan render.">
+                        <p>A 3D rendered floor plan of a home layout.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-photorealistic">
+                        <h4>Photorealistic Rendering Sample</h4>
+                        <img src="images/sample-photorealistic.jpg" alt="Sample for Photorealistic Rendering Services - Photorealistic render.">
+                        <p>A photorealistic render of a building facade.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-product">
+                        <h4>3D Product Sample</h4>
+                        <img src="images/sample-3d-product.jpg" alt="Sample for 3D Product Rendering Service - Product render.">
+                        <p>A 3D render of a product with detailed textures.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-rendering">
+                        <h4>3D Rendering Sample</h4>
+                        <img src="images/sample-3d-rendering.jpg" alt="Sample for 3D Rendering Services - General render.">
+                        <p>A general 3D render of an architectural structure.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-exterior">
+                        <h4>3D Exterior Sample</h4>
+                        <img src="images/sample-3d-exterior.jpg" alt="Sample for 3D Exterior Rendering Services - Exterior render.">
+                        <p>A 3D render of a building exterior with landscaping.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-furniture">
+                        <h4>3D Furniture Sample</h4>
+                        <img src="images/sample-3d-furniture.jpg" alt="Sample for 3D Furniture Rendering - Furniture render.">
+                        <p>A 3D render of a modern chair design.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-visualization">
+                        <h4>3D Visualization Sample</h4>
+                        <img src="images/sample-3d-visualization.jpg" alt="Sample for 3D Visualization Services - Cityscape render.">
+                        <p>A 3D visualization of a cityscape project.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-3d-home">
+                        <h4>3D Home Sample</h4>
+                        <img src="images/sample-3d-home.jpg" alt="Sample for 3D Home Rendering Services - Home render.">
+                        <p>A 3D render of a modern home interior.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-millwork">
+                        <h4>Millwork Sample</h4>
+                        <img src="images/sample-millwork.jpg" alt="Sample for Millwork Drafting Services - Millwork drawing.">
+                        <p>A detailed drawing of a wooden millwork piece.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-civil-engineering">
+                        <h4>Civil Engineering Sample</h4>
+                        <img src="images/sample-civil-engineering.jpg" alt="Sample for Civil Engineering Services - Bridge design.">
+                        <p>A design of a bridge with engineering annotations.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-solar-design">
+                        <h4>Solar Design Sample</h4>
+                        <img src="images/sample-solar-design.jpg" alt="Sample for Solar Design Services - Solar panel render.">
+                        <p>A 3D render of a building with solar panels.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-glazing">
+                        <h4>Glazing Sample</h4>
+                        <img src="images/sample-glazing.jpg" alt="Sample for Glazing Shop Drawings Services - Glass facade drawing.">
+                        <p>A detailed drawing of a glass facade installation.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-clash-coordination">
+                        <h4>Clash Coordination Sample</h4>
+                        <img src="images/sample-clash-coordination.jpg" alt="Sample for Clash Coordination Services - BIM clash model.">
+                        <p>A BIM model showing resolved design clashes.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-architectural-3d">
+                        <h4>Architectural 3D Sample</h4>
+                        <img src="images/sample-architectural-3d.jpg" alt="Sample for Architectural 3D Modeling Services - 3D building model.">
+                        <p>A 3D model of a building with layered elements.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-architectural-bim">
+                        <h4>Architectural BIM Sample</h4>
+                        <img src="images/sample-architectural-bim.jpg" alt="Sample for Architectural BIM Services - BIM model.">
+                        <p>A BIM model of a multi-story building.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-site-plans">
+                        <h4>Site Plans Sample</h4>
+                        <img src="images/sample-site-plans.jpg" alt="Sample for Architectural Site Plans - Site layout.">
+                        <p>A detailed site plan with landscaping and structures.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-steel-detailing">
+                        <h4>Steel Detailing Sample</h4>
+                        <img src="images/sample-steel-detailing.jpg" alt="Sample for Structural Steel Detailing - Steel drawing.">
+                        <p>A detailed steel structure drawing.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-bim-modeling">
+                        <h4>BIM Modeling Sample</h4>
+                        <img src="images/sample-bim-modeling.jpg" alt="Sample for BIM Modeling Services - BIM integrated model.">
+                        <p>A BIM model with integrated systems.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-point-cloud">
+                        <h4>Point Cloud Sample</h4>
+                        <img src="images/sample-point-cloud.jpg" alt="Sample for Point Cloud Modeling Services - Point cloud scan.">
+                        <p>A point cloud scan of a building structure.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-outsourcing">
+                        <h4>Outsourcing Sample</h4>
+                        <img src="images/sample-outsourcing.jpg" alt="Sample for Outsourcing Services - Remote CAD work.">
+                        <p>A remote team working on CAD projects.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-coordination">
+                        <h4>Coordination Sample</h4>
+                        <img src="images/sample-coordination.jpg" alt="Sample for Coordination Services - Coordinated model.">
+                        <p>A coordinated BIM model of a building.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-virtual-design">
+                        <h4>Virtual Design Sample</h4>
+                        <img src="images/sample-virtual-design.jpg" alt="Sample for Virtual Design And Construction - Virtual model.">
+                        <p>A virtual model of a construction site.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-renovation">
+                        <h4>Renovation Sample</h4>
+                        <img src="images/sample-renovation.jpg" alt="Sample for Renovation Design Services - Renovated building.">
+                        <p>A before and after render of a renovated building.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-architectural-rendering">
+                        <h4>Architectural Rendering Sample</h4>
+                        <img src="images/sample-architectural-rendering.jpg" alt="Sample for Architectural Rendering Services - Building render.">
+                        <p>A high-quality render of a building.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-architectural-design">
+                        <h4>Architectural Design Sample</h4>
+                        <img src="images/sample-architectural-design.jpg" alt="Sample for Architectural Design Services - Design model.">
+                        <p>A 3D model of an architectural design.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-architectural-engineering">
+                        <h4>Architectural Engineering Sample</h4>
+                        <img src="images/sample-architectural-engineering.jpg" alt="Sample for Architectural Engineering Services - Engineering drawing.">
+                        <p>An engineering drawing of a building.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-structural-design">
+                        <h4>Structural Design Sample</h4>
+                        <img src="images/sample-structural-design.jpg" alt="Sample for Structural Design/Drafting Services - Structural analysis.">
+                        <p>A structural analysis of a building.</p>
+                    </div>
+                    <div class="gallery-item" id="sample-tekla-detailing">
+                        <h4>Tekla Detailing Sample</h4>
+                        <img src="images/sample-tekla-detailing.jpg" alt="Sample for Tekla Detailing Services - Tekla model.">
+                        <p>A Tekla model of a steel structure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer style="background-color: #001f3f; color: white; padding: 20px; text-align: center;">
+        <div class="logo">PRO CAD DRAFTER</div>
+        <p>Follow us: <a href="#">LinkedIn</a> | <a href="#">X</a></p>
+        <p>&copy; 2025 Pro CAD Drafter. All rights reserved.</p>
+    </footer>
+</body>
+</html>
