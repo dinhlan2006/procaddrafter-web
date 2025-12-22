@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs - PRO CAD DRAFTER</title>
+    <title>2D Drafting Services - PRO CAD DRAFTER</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
@@ -23,9 +23,9 @@
         .mega-menu a{display:block;padding:10px 0;color:#444;font-size:15px;text-decoration:none;transition:0.3s}
         .mega-menu a:hover{color:#f0ad4e;padding-left:12px}
         @keyframes fadeIn{from{opacity:0;transform:translateY(-20px) translateX(-50%)}to{opacity:1;transform:translateY(0) translateX(-50%)}}
-        .hero{background:linear-gradient(rgba(0,31,63,0.88),rgba(0,31,63,0.88)),url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600') center/cover no-repeat;
-              height:80vh;display:flex;align-items:center;text-align:center;color:#fff}
-        .hero h1{font-size:68px;margin-bottom:25px;color:#f0ad4e}
+        .hero{background:linear-gradient(rgba(0,31,63,0.88),rgba(0,31,63,0.88)),url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1600') center/cover no-repeat;
+              height:90vh;display:flex;align-items:center;text-align:center;color:#fff}
+        .hero h1{font-size:68px;margin-bottom:25px}
         .hero p{font-size:24px;max-width:1000px;margin:0 auto 45px;opacity:0.95}
         .btn{display:inline-block;padding:18px 48px;border-radius:50px;font-weight:bold;text-decoration:none;transition:0.4s;margin:12px;font-size:18px}
         .btn-gold{background:#f0ad4e;color:#001f3f}
@@ -34,19 +34,31 @@
         .section{padding:100px 0}
         .section h2{font-size:48px;color:#001f3f;margin-bottom:70px;text-align:center;position:relative}
         .section h2:after{content:'';width:120px;height:5px;background:#f0ad4e;display:block;margin:25px auto}
-        .blog-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:40px}
-        .blog-card{background:#fff;padding:40px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);transition:0.4s}
-        .blog-card:hover{transform:translateY(-10px);box-shadow:0 25px 50px rgba(0,0,0,0.15)}
-        .blog-card img{width:100%;height:250px;object-fit:cover;border-radius:15px;margin-bottom:20px}
-        .blog-card h3{font-size:26px;color:#001f3f;margin-bottom:15px}
-        .blog-card .date{font-size:14px;color:#999;margin-bottom:15px}
-        .blog-card p{font-size:16px;color:#666;line-height:1.8}
-        footer{background:#001f3f;color:#fff;padding:80px 20px 40px;text-align:center}
+        .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin:80px 0}
+        .service-item{background:#fff;padding:35px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center}
+        .service-item i{font-size:60px;color:#f0ad4e;margin-bottom:25px}
+        .why-section{background:#001f3f;color:#fff;padding:120px 0}
+        .why-flex{display:flex;gap:80px;align-items:center;flex-wrap:wrap}
+        .why-text{flex:1;min-width:300px}
+        .why-text h2{font-size:48px;margin-bottom:30px}
+        .why-text p{font-size:20px;margin-bottom:25px}
+        .why-text ul{margin:30px 0;padding-left:30px;font-size:18px}
+        .why-text li{margin:15px 0}
+        .why-img{flex:1;min-width:300px}
+        .why-img img{width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+        .partners{margin:80px 0;text-align:center}
+        .partners img{height:60px;margin:0 30px;opacity:0.8}
+        .additional{background:#f8f9fa;padding:100px 0}
+        .additional-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+        .additional-item{background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);text-align:center}
+        .additional-item i{font-size:55px;color:#f0ad4e;margin-bottom:20px}
+        footer{background:#001f3f;color:#fff;padding:100px 20px 40px;text-align:center}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:60px;margin-bottom:60px}
         .footer-links a{color:#ccc;display:block;margin:15px 0;text-decoration:none;font-size:15px}
         .social a{color:#fff;font-size:28px;margin:0 18px;transition:0.3s}
         .social a:hover{color:#f0ad4e;transform:scale(1.3)}
-        @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}}
+        @media(max-width:992px){.mega-menu{width:90%;left:5%;transform:none;grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}.why-flex{flex-direction:column;text-align:center}}
     </style>
 </head>
 <body>
@@ -151,51 +163,153 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <h1>Our Blogs</h1>
-        <p>Stay updated with the latest insights, trends, and tips in CAD drafting, BIM, and construction technology for 2025 and beyond.</p>
+        <h1>2D Drafting Services</h1>
+        <p>Are you looking for experienced and knowledgeable personnel to accurately depict all the necessary geometric properties of your products without running out of budget? We, at PRO CAD DRAFTER, bring well-executed 2D drafting services. We ensure to provide precise 2D CAD plans, details, sections, schematics, and elevations across various design sectors.</p>
+        <a href="about.html" class="btn btn-gold">About Us</a>
+        <a href="contact.html" class="btn btn-outline">Get A Quote</a>
     </div>
 </section>
 
-<!-- BLOG LIST -->
+<!-- 2D DRAFTING WE OFFER -->
 <section class="section">
     <div class="container">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-list">
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="CAD Drafting for Sustainable Design">
-                <h3>CAD Drafting: A Key to Sustainable Design and Green Building</h3>
-                <div class="date">Published: November 11, 2025</div>
-                <p>In 2025, CAD drafting is revolutionizing sustainable construction by enabling energy-efficient designs and waste reduction. From simulating solar panels to optimizing material use, our tools ensure eco-friendly projects that meet green standards.</p>
+        <h2>2D Drafting Services We Offer</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            We have been delivering substantive 2D CAD drafting services to our AEC industry clientele for many years. As a top 2D CAD drafting service provider, we can assist you with cost-effective tools and technologies. Whether you work in electrical engineering, architectural engineering, civil engineering, or mechanical engineering, we are the right choice for all your 2D CAD needs.
+        </p>
+        <div class="service-list">
+            <div class="service-item">
+                <i class="fas fa-home"></i>
+                <h3>Architectural Drawings (AD)</h3>
             </div>
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581092921461-6ac1e3f8e9b3?w=800" alt="Top CAD Trends 2025">
-                <h3>Top CAD and Drafting Design Trends to Watch in 2025</h3>
-                <div class="date">Published: November 5, 2025</div>
-                <p>AI integration and cloud-based CAD are transforming drafting. Explore how automation and 3D printing will streamline construction workflows, reducing development time by up to 30%.</p>
+            <div class="service-item">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>Engineering Change Request (ECR)</h3>
             </div>
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581092580495-e0d23cbdf1dc?w=800" alt="CAD in Construction Documentation">
-                <h3>The Role of CAD Drafting in Precise Construction Documentation</h3>
-                <div class="date">Published: October 20, 2025</div>
-                <p>CAD ensures accurate 2D/3D documentation for compliance and permits. Learn how tools like AutoCAD and Revit minimize errors and facilitate smooth approvals in building projects.</p>
+            <div class="service-item">
+                <i class="fas fa-cogs"></i>
+                <h3>2D Details from the 2D Assemblies</h3>
             </div>
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581092160607-36f3e76f5f9c?w=800" alt="Outsourcing CAD Drafting">
-                <h3>Why U.S. Interior Firms Are Outsourcing CAD Drafting in 2025</h3>
-                <div class="date">Published: September 15, 2025</div>
-                <p>Outsourcing CAD saves 40-60% on costs while freeing teams for creativity. Discover how U.S. firms use offshore partners for faster turnaround in interior design projects.</p>
+            <div class="service-item">
+                <i class="fas fa-chair"></i>
+                <h3>Millwork Drawings</h3>
             </div>
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581094796134-308a0c8e9e2e?w=800" alt="3D Drafting Tips">
-                <h3>Top 5 Tips for Effective 3D Drafting in Construction</h3>
-                <div class="date">Published: October 16, 2025</div>
-                <p>From layer management to virtual testing, these tips boost efficiency in 3D drafting. Apply them to reduce revisions and enhance collaboration in building projects.</p>
+            <div class="service-item">
+                <i class="fas fa-store"></i>
+                <h3>Drafting Support for Retail Space Planners</h3>
             </div>
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581093577422-6f9f5c3e450d?w=800" alt="Future of BIM">
-                <h3>The Future of BIM: Revolutionizing Construction in 2025</h3>
-                <div class="date">Published: November 11, 2025</div>
-                <p>Building Information Modeling (BIM) is transforming the construction industry by integrating 3D models with rich data to enhance planning, coordination, and execution...</p>
+            <div class="service-item">
+                <i class="fas fa-industry"></i>
+                <h3>Mechanical 2D Drafting Services</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-hard-hat"></i>
+                <h3>Fabrication Drawings</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Instrument Loop Diagrams</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-building"></i>
+                <h3>Structural Steel Detailing</h3>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:60px;">
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Plans</a>
+        </div>
+    </div>
+</section>
+
+<!-- WHY PREFERRED -->
+<section class="why-section">
+    <div class="container why-flex">
+        <div class="why-text">
+            <h2>Why Are We The Preferred 2D CAD Drafting Service Provider?</h2>
+            <p>Working from a credible provider eliminates the original drawings error. Our CAD experts will create the technical working drawings you need. Aside from this, we will translate and scale the data as required and present it in a professional digital CAD plan which most companies your partnering as well. Whether it is structural or architectural 2D drafting services, we craft the CAD design plan in a well-structured drawing environment with the help of layers and viewports to control and oversee the visible output. Get accurate, reliable and quick CAD working drawings from us.</p>
+            <p>We are the chosen option for 2-dimensional CAD drafting services due to the following reasons:</p>
+            <ul>
+                <li>We offer scalable services to our beloved clients whether they are mechanical 2D drafting services or others.</li>
+                <li>Our team has a complete understanding of the design, obsolescence, and manufacturing stages of the product lifecycle.</li>
+                <li>We have complete access to cutting-edge drafting design equipment, skilled CAD technicians, a huge workspace, and many more to ensure quality standards.</li>
+            </ul>
+            <a href="contact.html" class="btn btn-gold">Upload Plans</a>
+            <a href="contact.html" class="btn btn-outline" style="border-color:#f0ad4e;color:#f0ad4e">Book A Meeting</a>
+        </div>
+        <div class="why-img">
+            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="2D Drafting Example">
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Autodesk_Revit_Logo.png/800px-Autodesk_Revit_Logo.png" alt="Autodesk">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Autodesk_AutoCAD_2020.svg/800px-Autodesk_AutoCAD_2020.svg.png" alt="AutoCAD">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Tekla_Structures_Logo.svg/800px-Tekla_Structures_Logo.svg.png" alt="Tekla">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Trimble_logo.svg/800px-Trimble_logo.svg.png" alt="Trimble">
+</div>
+
+<!-- ADDITIONAL BENEFITS -->
+<section class="additional section">
+    <div class="container">
+        <h2>Additional 2D Drafting You May Benefit From</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            2D CAD drafting has always been one of our core services. Our team has expertise in product design, prototyping, and manufacturing in different industries. We make sure that your CAD drawings are readily editable and easy to search, archive, and modify. So, by outsourcing your CAD designing and drafting project to our company, you will be capable of integrating your drawings with other assemblies, accelerating the whole design process. Even if you want us to work on complex design levels, we can deal with it as well.
+        </p>
+        <div class="additional-grid">
+            <div class="additional-item">
+                <i class="fas fa-building"></i>
+                <h3>BIM Services</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-road"></i>
+                <h3>Infrastructure Engineering Services</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-city"></i>
+                <h3>Structural Engineering</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-home"></i>
+                <h3>Architectural Engineering Services</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-plug"></i>
+                <h3>Civil Engineering Services</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-bolt"></i>
+                <h3>Electrical Engineering Services</h3>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:60px;">
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:#001f3f;color:#fff;">
+    <div class="container">
+        <h2>Testimonials</h2>
+        <p style="font-size:20px;max-width:900px;margin:0 auto 60px;">
+            PRO CAD DRAFTER, we have assisted many clients in their construction projects since now with reliable 2D CAD drafting services. Many businesses have achieved success by working with us. Check out what people think about our services below.
+        </p>
+        <div class="testimonial-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px">
+            <div class="testimonial" style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
+                <p>"I have recently used their services and the quality of CAD drawings I received was top-notch. The level of accuracy and the attention to detail this company provides is unmatched. I appreciate their work."</p>
+                <strong>- Adam Smith</strong><br>★★★★★
+            </div>
+            <div class="testimonial" style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
+                <p>"I had the pleasure of working with this company. They are very professionally prepared by their 2D drafting assistance. Their professionalism and expertise made the whole process hassle-free and smooth. They are a great choice for your CAD needs."</p>
+                <strong>- Sam Kim</strong><br>★★★★★
+            </div>
+            <div class="testimonial" style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
+                <p>"PRO CAD DRAFTER provided exceptional service. Their staff understood all my project requirements perfectly and delivered the best results. They are super friendly and the communication was smooth. I would undoubtedly work with this drafting company for my future construction work."</p>
+                <strong>- Sam Andrew</strong><br>★★★★★
             </div>
         </div>
     </div>

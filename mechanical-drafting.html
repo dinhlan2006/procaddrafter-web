@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Drafting Services - PRO CAD DRAFTER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Arial,sans-serif;background:#f8f9fa;color:#333;line-height:1.6}
+        .container{width:90%;max-width:1280px;margin:auto}
+        header{background:#001f3f;padding:18px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
+        .header-flex{display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:62px}
+        nav ul{display:flex;gap:45px;list-style:none}
+        nav a{color:#fff;text-decoration:none;font-weight:600;font-size:16px;transition:0.3s}
+        nav a:hover{color:#f0ad4e}
+        .dropdown{position:relative}
+        .dropdown:hover .mega-menu{display:grid;animation:fadeIn .45s}
+        .mega-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:980px;background:#fff;border-radius:16px;
+                  box-shadow:0 25px 50px rgba(0,0,0,0.22);padding:40px;grid-template-columns:repeat(4,1fr);gap:35px;z-index:999}
+        .mega-menu h4{color:#001f3f;margin-bottom:20px;font-size:17px;border-bottom:3px solid #f0ad4e;padding-bottom:10px}
+        .mega-menu a{display:block;padding:10px 0;color:#444;font-size:15px;text-decoration:none;transition:0.3s}
+        .mega-menu a:hover{color:#f0ad4e;padding-left:12px}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(-20px) translateX(-50%)}to{opacity:1;transform:translateY(0) translateX(-50%)}}
+        .hero{background:linear-gradient(rgba(0,31,63,0.88),rgba(0,31,63,0.88)),url('https://images.unsplash.com/photo-1581092160607-ada7f7f9b3a8?w=1600') center/cover no-repeat;
+              height:90vh;display:flex;align-items:center;text-align:center;color:#fff}
+        .hero h1{font-size:68px;margin-bottom:25px}
+        .hero p{font-size:24px;max-width:1000px;margin:0 auto 45px;opacity:0.95}
+        .btn{display:inline-block;padding:18px 48px;border-radius:50px;font-weight:bold;text-decoration:none;transition:0.4s;margin:12px;font-size:18px}
+        .btn-gold{background:#f0ad4e;color:#001f3f}
+        .btn-outline{background:transparent;color:#fff;border:3px solid #fff}
+        .btn:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(240,173,78,0.5)}
+        .section{padding:100px 0}
+        .section h2{font-size:48px;color:#001f3f;margin-bottom:70px;text-align:center;position:relative}
+        .section h2:after{content:'';width:120px;height:5px;background:#f0ad4e;display:block;margin:25px auto}
+        .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin:80px 0}
+        .service-item{background:#fff;padding:35px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center}
+        .service-item i{font-size:60px;color:#f0ad4e;margin-bottom:25px}
+        .why-section{background:#001f3f;color:#fff;padding:120px 0}
+        .why-flex{display:flex;gap:80px;align-items:center;flex-wrap:wrap}
+        .why-text{flex:1;min-width:300px}
+        .why-text h2{font-size:48px;margin-bottom:30px}
+        .why-text p{font-size:20px;margin-bottom:25px}
+        .why-text ul{margin:30px 0;padding-left:30px;font-size:18px}
+        .why-text li{margin:15px 0}
+        .why-img{flex:1;min-width:300px}
+        .why-img img{width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+        .partners{margin:80px 0;text-align:center}
+        .partners img{height:60px;margin:0 30px;opacity:0.8}
+        .additional{background:#f8f9fa;padding:100px 0}
+        .additional-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+        .additional-item{background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);text-align:center}
+        .additional-item i{font-size:55px;color:#f0ad4e;margin-bottom:20px}
+        footer{background:#001f3f;color:#fff;padding:100px 20px 40px;text-align:center}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:60px;margin-bottom:60px}
+        .footer-links a{color:#ccc;display:block;margin:15px 0;text-decoration:none;font-size:15px}
+        .social a{color:#fff;font-size:28px;margin:0 18px;transition:0.3s}
+        .social a:hover{color:#f0ad4e;transform:scale(1.3)}
+        @media(max-width:992px){.mega-menu{width:90%;left:5%;transform:none;grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}.why-flex{flex-direction:column;text-align:center}}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html" class="logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9Ijc1IiB2aWV3Qm94PSIwIDAgMjYwIDc1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIyNjAiIGhlaWdodD0iNzUiIHJ4PSIyMCIgZmlsbD0iI2YwYWQ0ZSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU1LDE1KSI+CiAgICA8cGF0aCBkPSJNMCAwIEw2MCwwIEw2MCw0NSBMMzAsNjUgTDAgNDUgWiIgZmlsbD0iIzAwMWYzZiIvPgogICAgPHBhdGggZD0iTTMwLDIyIEw3OCwyMiBMNzgsNjUgTDMwLDY1IFoiIGZpbGw9IiMwMDFmM2YiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNDUiIHI9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NSIgcj0iMTAiIGZpbGw9IiNmZmYiLz4KICA8L2c+CiAgPHRleHQgeD0iMTAwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMDAxZjNmIj5QUk8gQ0FEIERSQUZURVI8L3RleHQ+Cjwvc3ZnPg==" alt="PRO CAD DRAFTER" style="height:65px;">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="mega-menu">
+                        <!-- CỘT 1: CAD Services -->
+                        <div class="menu-column">
+                            <h4>CAD Services</h4>
+                            <a href="2d-drafting.html">2D Drafting Services</a>
+                            <a href="3d-drafting.html">3D Drafting Services</a>
+                            <a href="mep-drafting.html">MEP Drafting Services</a>
+                            <a href="mechanical-drafting.html">Mechanical Drafting Services</a>
+                            <a href="civil-drafting.html">Civil Drafting Services</a>
+                            <a href="architectural-drafting.html">Architectural Drafting Services</a>
+                            <a href="hvac-drafting.html">HVAC Drafting Services</a>
+                            <a href="residential-drafting.html">Residential Drafting Services</a>
+                            <a href="cad-conversion.html">CAD Conversion Services</a>
+                            <a href="pdf-to-cad.html">PDF to CAD Conversion Services</a>
+                            <a href="3d-scan-to-cad.html">3D Scan to CAD Service</a>
+                        </div>
+
+                        <!-- CỘT 2: Design Services -->
+                        <div class="menu-column">
+                            <h4>Design Services</h4>
+                            <a href="3d-cad-design.html">3D CAD Design Services</a>
+                            <a href="mechanical-design.html">Mechanical Design Services</a>
+                            <a href="interior-drafting.html">Interior Design Drafting Services</a>
+                            <a href="interior-design.html">Interior Design Services</a>
+                            <a href="exterior-design.html">Exterior Design Services</a>
+                            <a href="autocad-drawing.html">AutoCAD Drawing Services</a>
+                            <a href="contract-drafting.html">Contract Drafting Services</a>
+                            <a href="2d-to-3d.html">2D to 3D CAD Conversion Services</a>
+                            <a href="landscape-design.html">Landscaping Design Services</a>
+                            <a href="autocad-design.html">AutoCAD Design Services</a>
+                            <a href="commercial-design.html">Commercial Design Services</a>
+                            <a href="cad-digitization.html">CAD Digitization Services</a>
+                            <a href="building-measurement.html">Building Measurement Services</a>
+                            <a href="shop-drawing.html">Shop Drawing Services</a>
+                            <a href="swimming-pool.html">Swimming Pool Design</a>
+                            <a href="home-design.html">Home Design Services</a>
+                        </div>
+
+                        <!-- CỘT 3: Rendering Services -->
+                        <div class="menu-column">
+                            <h4>Rendering Services</h4>
+                            <a href="3d-real-estate.html">3D Real Estate Rendering</a>
+                            <a href="3d-floor-plan.html">3D Floor Plan Rendering Services</a>
+                            <a href="photorealistic.html">Photorealistic Rendering Services</a>
+                            <a href="3d-product.html">3D Product Rendering Service</a>
+                            <a href="3d-rendering.html">3D Rendering Services</a>
+                            <a href="3d-exterior.html">3D Exterior Rendering Services</a>
+                            <a href="3d-furniture.html">3D Furniture Rendering</a>
+                            <a href="3d-visualization.html">3D Visualization Services</a>
+                            <a href="3d-home.html">3D Home Rendering Services</a>
+                            <a href="millwork-drafting.html">Millwork Drafting Services</a>
+                            <a href="civil-engineering.html">Civil Engineering Services</a>
+                            <a href="solar-design.html">Solar Design Services</a>
+                            <a href="glazing-shop.html">Glazing Shop Drawings Services</a>
+                            <a href="clash-coordination.html">Clash Coordination Services</a>
+                        </div>
+
+                        <!-- CỘT 4: Architectural Modeling Services -->
+                        <div class="menu-column">
+                            <h4>Architectural Modeling Services</h4>
+                            <a href="architectural-3d.html">Architectural 3D Modeling Services</a>
+                            <a href="architectural-bim.html">Architectural BIM Services</a>
+                            <a href="architectural-site-plans.html">Architectural Site Plans</a>
+                            <a href="structural-steel.html">Structural Steel Detailing</a>
+                            <a href="bim-modeling.html">BIM Modeling Services</a>
+                            <a href="point-cloud.html">Point Cloud Modeling Services</a>
+                            <a href="bim-outsourcing.html">BIM Outsourcing Services</a>
+                            <a href="bim-coordination.html">BIM Coordination Services</a>
+                            <a href="virtual-design.html">Virtual Design And Construction</a>
+                            <a href="renovation-design.html">Renovation Design Services</a>
+                            <a href="architectural-rendering.html">Architectural Rendering Services</a>
+                            <a href="architectural-design.html">Architectural Design Services</a>
+                            <a href="architectural-engineering.html">Architectural Engineering Services</a>
+                            <a href="structural-design.html">Structural Design/Drafting Services</a>
+                            <a href="tekla-detailing.html">Tekla Detailing Services</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="samples.html">Samples</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>High Quality Mechanical Drafting Services</h1>
+        <p>Is a lack of in-house talent preventing you from finishing your mechanical drafting on time? No worries as PRO CAD DRAFTER brings the most reliable mechanical drafting services to assist you in keeping up with performance metrics while availing of substantial cost reductions. We are a team of experienced and dedicated engineers, design professionals, and quality analysts who prioritize providing world-class drafting services to our beloved clients.</p>
+        <a href="about.html" class="btn btn-gold">About Us</a>
+        <a href="contact.html" class="btn btn-outline">Get A Quote</a>
+    </div>
+</section>
+
+<!-- ON-DEMAND MECHANICAL CAD DRAFTING -->
+<section class="section">
+    <div class="container">
+        <h2>Our On-Demand Mechanical CAD Drafting Services</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            Turn your concepts into fully functional prototypes with our expert mechanical CAD drafting services. We can assist you in shrinking the overhead and boosting productivity through precise CAD designs. Having many years of experience in the industry, we know how to use the latest auto CAD mechanical drafting tools to ensure accuracy in results. In addition to this, we go through the project of each customer on a case-by-case basis and assign our top-class drafters whose skills are most suitable for the project's specific requirements.
+        </p>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            Take advantage of PRO CAD DRAFTER's network of professional drafting experts. Connect with a leading mechanical drafter and get drafting and design services tailored to your project. You can enjoy a full range of 2D & 3D mechanical drafting services from us, including:
+        </p>
+        <div class="service-list">
+            <div class="service-item">
+                <i class="fas fa-bolt"></i>
+                <h3>Electrical Schematics Drawings</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-cube"></i>
+                <h3>3D Modeling</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-tools"></i>
+                <h3>CAD Conversion</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-car"></i>
+                <h3>Machine Design Services</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Assembly Drawings</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-wrench"></i>
+                <h3>Reverse Engineering Solutions</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-file-alt"></i>
+                <h3>CAD Drawing for Castings</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-patent"></i>
+                <h3>CAD Drawings for Patenting</h3>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-cogs"></i>
+                <h3>GD & T Drawings</h3>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:60px;">
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Plans</a>
+        </div>
+    </div>
+</section>
+
+<!-- OUR CAPABILITIES -->
+<section class="why-section">
+    <div class="container why-flex">
+        <div class="why-text">
+            <h2>Check Out Our Outshines Mechanical CAD Drafting Capabilities</h2>
+            <p>You can be assured of precise and high-quality drawings with our outsource mechanical CAD drafting services. We have a top-notch engineering Infrastructure in place to deliver excellent design and drafting services that serve your purpose. Adding more to this, our research partners have decades of experience in mechanical 2D drafting services. By following a streamlined delivery and project development process, we ensure that all your mechanical construction projects are completed within the designated timeline, leaving minimal chances of any errors.</p>
+            <p>We are categorized among the best mechanical drafting companies in the USA because of the following attributes:</p>
+            <ul>
+                <li>Our commitment to hard work and capability of providing scalable services has helped us build a strong clientele.</li>
+                <li>With transparent pricing, we aim to provide a fixed rate per sheet, ensuring cost-effectiveness and affordability.</li>
+                <li>We create CAD drawings considering standard layering conventions, ensuring ease of understanding and consistency.</li>
+            </ul>
+            <a href="contact.html" class="btn btn-gold">Upload Plans</a>
+            <a href="contact.html" class="btn btn-outline" style="border-color:#f0ad4e;color:#f0ad4e">Book A Meeting</a>
+        </div>
+        <div class="why-img">
+            <img src="https://images.unsplash.com/photo-1581092160607-ada7f7f9b3a8?w=800" alt="Mechanical Drafting">
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Autodesk_AutoCAD_2020.svg/800px-Autodesk_AutoCAD_2020.svg.png" alt="AutoCAD">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/SolidWorks_Logo.svg/800px-SolidWorks_Logo.svg.png" alt="SolidWorks">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Tekla_Structures_Logo.svg/800px-Tekla_Structures_Logo.svg.png" alt="Tekla">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Trimble_logo.svg/800px-Trimble_logo.svg.png" alt="Trimble">
+</div>
+
+<!-- ADVANTAGES -->
+<section class="additional section">
+    <div class="container">
+        <h2>Advantages Of Mechanical CAD Drafting Companies</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            Outsourcing your project to trusted mechanical CAD drafting firms allows you to focus on core competencies and many other benefits. Instead of spending effort and time on drafting tasks, your team can channel their energy into innovation, creativity, and strategic planning. When you hire 3D mechanical drafting services, the risk of mistakes are significantly reduced. Despite this, mechanical drafting companies can facilitate seamless collaboration for lucrative results.
+        </p>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            As a leading drafting agency, we use our expertise to fix perplexing challenges in mechanical drawings for better growth and productivity. We can help transform the way you approach different design projects. If you are looking for a reliable CAD drafter partner, hire us right now.
+        </p>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            However, other than mechanical drafting pencil drawings, you can get the following as well:
+        </p>
+        <div class="additional-grid">
+            <div class="additional-item">
+                <i class="fas fa-car-battery"></i>
+                <h3>AutoCAD Mechanical Drawings for Auto Parts</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-syringe"></i>
+                <h3>Injection Molding Design</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-industry"></i>
+                <h3>Fabrication Drawings</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-sheet-plastic"></i>
+                <h3>Sheet Metals Shop Drawings</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-book-open"></i>
+                <h3>Assembly Instruction Sheets</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-cubes"></i>
+                <h3>Assembly Drawings With Integrated B.O.M</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-industry"></i>
+                <h3>Fabrication Drawings</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Instrument Loop Diagrams</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-building"></i>
+                <h3>Structural Steel Detailing</h3>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:60px;">
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:#001f3f;color:#fff;">
+    <div class="container">
+        <h2>Testimonials</h2>
+        <p style="font-size:20px;max-width:900px;margin:0 auto 60px;">
+            With our expert mechanical design and drafting services, many construction businesses have reached heights. Whether you want help regarding industrial, commercial, or residential building projects, CAD Drafter is the best choice. Check out what our clients say about us.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px">
+            <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
+                <p>"I am thankful to have this drafting company in my corner to provide precise drawings for my mechanical construction project. Attention to detail, friendliness, good communication, and professionalism are much appreciated. I will reach out to them for more architectural projects in the future."</p>
+                <strong>- James Stephen</strong><br>★★★★★
+            </div>
+            <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
+                <p>"CAD Drafter has provided an exceptional drafting and designing service for our home renovation project. The team was reliable, efficient, and a pleasure to work with. Working with this drafting firm was worth spending money on. Adding more, their drafting services are reasonably priced."</p>
+                <strong>- Rowlie Kim</strong><br>★★★★★
+            </div>
+            <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
+                <p>"We appreciate the effort put in by this drafting agency on our mechanical construction project. We are very happy to work with their design suggestions and spectacular finished results. Much recommended to anyone looking for expert help for their mechanical project."</p>
+                <strong>- Paul Klose</strong><br>★★★★★
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9Ijc1IiB2aWV3Qm94PSIwIDAgMjYwIDc1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIyNjAiIGhlaWdodD0iNzUiIHJ4PSIyMCIgZmlsbD0iI2YwYWQ0ZSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU1LDE1KSI+CiAgICA8cGF0aCBkPSJNMCAwIEw2MCwwIEw2MCw0NSBMMzAsNjUgTDAgNDUgWiIgZmlsbD0iIzAwMWYzZiIvPgogICAgPHBhdGggZD0iTTMwLDIyIEw3OCwyMiBMNzgsNjUgTDMwLDY1IFoiIGZpbGw9IiMwMDFmM2YiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNDUiIHI9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NSIgcj0iMTAiIGZpbGw9IiNmZmYiLz4KICA8L2c+CiAgPHRleHQgeD0iMTAwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMDAxZjNmIj5QUk8gQ0FEIERSQUZURVI8L3RleHQ+Cjwvc3ZnPg==" alt="PRO CAD DRAFTER" style="height:65px;">
+            <p style="margin-top:20px;">Expert CAD Drafting & BIM Services Worldwide</p>
+        </div>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="samples.html">Samples</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <p style="text-align:center;color:#888;margin-top:50px;">© 2025 PRO CAD DRAFTER. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

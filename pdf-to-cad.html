@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samples - PRO CAD DRAFTER</title>
+    <title>PDF To CAD Conversion Services - PRO CAD DRAFTER</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
@@ -24,8 +24,8 @@
         .mega-menu a:hover{color:#f0ad4e;padding-left:12px}
         @keyframes fadeIn{from{opacity:0;transform:translateY(-20px) translateX(-50%)}to{opacity:1;transform:translateY(0) translateX(-50%)}}
         .hero{background:linear-gradient(rgba(0,31,63,0.88),rgba(0,31,63,0.88)),url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=1600') center/cover no-repeat;
-              height:80vh;display:flex;align-items:center;text-align:center;color:#fff}
-        .hero h1{font-size:68px;margin-bottom:25px;color:#f0ad4e}
+              height:90vh;display:flex;align-items:center;text-align:center;color:#fff}
+        .hero h1{font-size:68px;margin-bottom:25px}
         .hero p{font-size:24px;max-width:1000px;margin:0 auto 45px;opacity:0.95}
         .btn{display:inline-block;padding:18px 48px;border-radius:50px;font-weight:bold;text-decoration:none;transition:0.4s;margin:12px;font-size:18px}
         .btn-gold{background:#f0ad4e;color:#001f3f}
@@ -34,18 +34,33 @@
         .section{padding:100px 0}
         .section h2{font-size:48px;color:#001f3f;margin-bottom:70px;text-align:center;position:relative}
         .section h2:after{content:'';width:120px;height:5px;background:#f0ad4e;display:block;margin:25px auto}
-        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;padding:0 20px}
-        .gallery-item{background:#fff;padding:30px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center;transition:0.4s}
-        .gallery-item:hover{transform:translateY(-10px);box-shadow:0 25px 50px rgba(0,0,0,0.15)}
-        .gallery-item img{width:100%;height:auto;border-radius:15px;margin-bottom:20px}
-        .gallery-item h3{font-size:24px;color:#001f3f;margin-bottom:15px}
-        .gallery-item p{font-size:16px;color:#666}
-        footer{background:#001f3f;color:#fff;padding:80px 20px 40px;text-align:center}
+        .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin:80px 0}
+        .service-item{background:#fff;padding:35px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center}
+        .service-item i{font-size:60px;color:#f0ad4e;margin-bottom:25px}
+        .why-section{background:#001f3f;color:#fff;padding:120px 0}
+        .why-flex{display:flex;gap:80px;align-items:center;flex-wrap:wrap}
+        .why-text{flex:1;min-width:300px}
+        .why-text h2{font-size:48px;margin-bottom:30px}
+        .why-text p{font-size:20px;margin-bottom:25px}
+        .why-text ul{margin:30px 0;padding-left:30px;font-size:18px}
+        .why-text li{margin:15px 0}
+        .why-img{flex:1;min-width:300px}
+        .why-img img{width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+        .partners{margin:80px 0;text-align:center}
+        .partners img{height:60px;margin:0 30px;opacity:0.8}
+        .additional{background:#f8f9fa;padding:100px 0}
+        .additional-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+        .additional-item{background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);text-align:center}
+        .additional-item i{font-size:55px;color:#f0ad4e;margin-bottom:20px}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px}
+        .testimonial{background:rgba(255,255,255,0.1);padding:40px;border-radius:20px}
+        footer{background:#001f3f;color:#fff;padding:100px 20px 40px;text-align:center}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:60px;margin-bottom:60px}
         .footer-links a{color:#ccc;display:block;margin:15px 0;text-decoration:none;font-size:15px}
         .social a{color:#fff;font-size:28px;margin:0 18px;transition:0.3s}
         .social a:hover{color:#f0ad4e;transform:scale(1.3)}
-        @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}}
+        @media(max-width:992px){.mega-menu{width:90%;left:5%;transform:none;grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}.why-flex{flex-direction:column;text-align:center}}
     </style>
 </head>
 <body>
@@ -150,62 +165,171 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <h1>Project Samples</h1>
-        <p>Explore our extensive portfolio of high-quality CAD samples across all services. Each sample showcases precision, attention to detail, and professional excellence that PRO CAD DRAFTER delivers to every client.</p>
+        <h1>PDF To CAD Conversion Services</h1>
+        <p>In today's world, when you need to transform your drawings into a 2-dimensional or 3-dimensional model to add more definition, CAD files are the ideal choice. Let PRO CAD DRAFTER help you here. With our professional PDF to CAD conversion services, we turn different types of drawings into CAD formats, such as scanned images and PDFs into dxf or dwg format. We've covered everything whether you want to convert MEP layouts, construction blueprints, product designs, or architectural design formats.</p>
+        <a href="about.html" class="btn btn-gold">About Us</a>
+        <a href="contact.html" class="btn btn-outline">Get A Quote</a>
     </div>
 </section>
 
-<!-- SAMPLES GALLERY -->
+<!-- DIVERSE CLIENTELE -->
 <section class="section">
     <div class="container">
-        <h2>Our Sample Gallery</h2>
-        <div class="gallery">
-            <!-- Mẫu ví dụ – bạn có thể thay bằng hình thật hoặc giữ placeholder -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="2D Drafting Sample">
-                <h3>2D Drafting Services</h3>
-                <p>Precise floor plans and technical drawings for residential and commercial projects.</p>
+        <h2>Diverse Clientele For PDF To CAD Conversion</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            The PDF to CAD conversion allows for a higher level of flexibility and precision in editing and altering a design. With this approach, the designs can be modified, rotated, and scaled easily, reducing the chances of any possible errors in the design process. AEC specialists from diverse industries can effectively plan their infrastructure projects with our expert assistance. Whether you work in industrial, real estate, construction, engineering, architecture, or any other industry, you can hire us to convert PDF files to CAD.
+        </p>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            <strong>We Are Experts In Converting PDF To CAD</strong><br>
+            Anyhow, converting PDF to CAD is not a challenging task now. Outsourcing your CAD conversion needs to ensure that you get 100% reliable results. Check our offerings below.
+        </p>
+        <div class="service-list">
+            <div class="service-item">
+                <i class="fas fa-file-pdf"></i>
+                <h3>Scanned Documents to CAD</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092921461-6ac1e3f8e9b3?w=800" alt="3D Modeling Sample">
-                <h3>3D Modeling & Rendering</h3>
-                <p>Realistic 3D models and photorealistic renders for visualization and presentation.</p>
+            <div class="service-item">
+                <i class="fas fa-cubes"></i>
+                <h3>Design CAD Blocks</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092580495-e0d23cbdf1dc?w=800" alt="MEP Drafting Sample">
-                <h3>MEP & HVAC Drafting</h3>
-                <p>Detailed mechanical, electrical, and plumbing system layouts.</p>
+            <div class="service-item">
+                <i class="fas fa-redo"></i>
+                <h3>CAD Redrafting & Conversion</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092160607-36f3e76f5f9c?w=800" alt="Architectural Sample">
-                <h3>Architectural Design</h3>
-                <p>Complete architectural plans from concept to construction documents.</p>
+            <div class="service-item">
+                <i class="fas fa-file-image"></i>
+                <h3>Conversion</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581094796134-308a0c8e9e2e?w=800" alt="Interior Design Sample">
-                <h3>Interior Design & Rendering</h3>
-                <p>Stunning interior visualizations for residential and commercial spaces.</p>
+            <div class="service-item">
+                <i class="fas fa-file"></i>
+                <h3>TIFF to CAD Conversion</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581093577422-6f9f5c3e450d?w=800" alt="Shop Drawing Sample">
-                <h3>Shop & Fabrication Drawings</h3>
-                <p>Accurate shop drawings for steel, millwork, and custom fabrication.</p>
+            <div class="service-item">
+                <i class="fas fa-camera"></i>
+                <h3>Photographs to CAD Conversion</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092335397-0cace2e6b5f3?w=800" alt="Landscape Sample">
-                <h3>Landscape & Exterior Design</h3>
-                <p>Beautiful outdoor spaces and landscape architecture designs.</p>
+            <div class="service-item">
+                <i class="fas fa-file-image"></i>
+                <h3>JPEG to CAD Conversion</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581093583712-8e9e291a9a3d?w=800" alt="BIM Modeling Sample">
-                <h3>BIM & Coordination</h3>
-                <p>Integrated BIM models with clash detection and coordination.</p>
+            <div class="service-item">
+                <i class="fas fa-building"></i>
+                <h3>Value or Blueprint to CAD Conversion</h3>
             </div>
-            <!-- Thêm nhiều mẫu nếu cần -->
+            <div class="service-item">
+                <i class="fas fa-paper-plane"></i>
+                <h3>Paper to CAD Conversion</h3>
+            </div>
         </div>
         <div style="text-align:center;margin-top:60px;">
-            <a href="contact.html" class="btn btn-gold">Request Custom Sample</a>
-            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Your Plans</a>
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Plans</a>
+        </div>
+    </div>
+</section>
+
+<!-- WE OFFER CAD DRAWING TO PDF CONVERTER -->
+<section class="why-section">
+    <div class="container why-flex">
+        <div class="why-text">
+            <h2>We Offer CAD Drawing To PDF Converter With Certainty</h2>
+            <p>By working with us, you will get the CAD drawing to PDF converter with certainty. We have a skilled, trained, and experienced team of CAD designers to provide us with the right information about your input PDF files. We will start preparing accurate CAD designs immediately. Adding more to this, we offer market-competitive and affordable pricing for CAD to PDF conversion. Our AutoCAD software and tools proficiency help us deliver exceptional-quality conversions in no time. Our team of designers and drafters works around the clock to ensure that time differences don't hinder the overall success of your project in any way.</p>
+            <p><strong>Software We Use</strong></p>
+            <ul>
+                <li>AutoCAD</li>
+                <li>3ds Max</li>
+                <li>Creo</li>
+                <li>Revit</li>
+                <li>Fusion 360</li>
+            </ul>
+            <a href="contact.html" class="btn btn-gold">Upload Plans</a>
+            <a href="contact.html" class="btn btn-outline" style="border-color:#f0ad4e;color:#f0ad4e">Book A Meeting</a>
+        </div>
+        <div class="why-img">
+            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="PDF to CAD">
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Autodesk_Revit_Logo.png/800px-Autodesk_Revit_Logo.png" alt="Revit">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Autodesk_AutoCAD_2020.svg/800px-Autodesk_AutoCAD_2020.svg.png" alt="AutoCAD">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Tekla_Structures_Logo.svg/800px-Tekla_Structures_Logo.svg.png" alt="Tekla">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Trimble_logo.svg/800px-Trimble_logo.svg.png" alt="Trimble">
+</div>
+
+<!-- BENEFITS OF OUTSOURCING -->
+<section class="additional section">
+    <div class="container">
+        <h2>Benefits Of Outsourcing Convert PDF Files To CAD To Us</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            Outsourcing to convert PDF files to CAD can provide you with many significant advantages. With licenses of cutting-edge PDF to CAD conversion software and tools, our software-enabled line is pretty vast. We employ the most experienced design engineers to amend your drawings effectively. Aside from this, our team ensures to change and update your CAD drawings following necessary industry standards to meet your needs.
+        </p>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            Take advantage of our PDF to CAD conversion free to take your business to heights. Our common services for CAD conversion include the following.
+        </p>
+        <div class="additional-grid">
+            <div class="additional-item">
+                <i class="fas fa-file-image"></i>
+                <h3>JPEG to DWG</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-file"></i>
+                <h3>PDF to DWG File</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-image"></i>
+                <h3>PNG to DWG</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-building"></i>
+                <h3>A PDF to DWG</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-industry"></i>
+                <h3>PDF Drawings to AutoCAD</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-tools"></i>
+                <h3>Instrument Loop Diagrams</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-industry"></i>
+                <h3>Fabrication Drawings</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Structural Steel Detailing</h3>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:60px;">
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- OUR CLIENT FEEDBACK -->
+<section class="section" style="background:#001f3f;color:#fff;">
+    <div class="container">
+        <h2>Our Client Feedback</h2>
+        <p style="font-size:20px;max-width:900px;margin:0 auto 60px;">
+            We have assisted many construction businesses with dependable PDF to CAD conversion services so far. Our dedication to work with excellence and delivering a quality work is what sets us apart from others. Want to benefit from our services? Check our client feedback.
+        </p>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"I have recently worked with this company for my architectural project. Their professional drafters proficiently transformed my PDF drawings into a 3D model. I can't appreciate them enough for putting so much effort into my project. You should also hire them for your next drafting project."</p>
+                <strong>- Paul Barker</strong><br>★★★★★
+            </div>
+            <div class="testimonial">
+                <p>"We worked with a couple of drafter agencies to convert PDF to CAD. This one is second to none. From the quick response to higher-quality services and meticulous attention to detail, everything is much appreciated. They delivered the most accurate 3-dimensional models for my PDF drawings."</p>
+                <strong>- Nickolas Morley</strong><br>★★★★★
+            </div>
+            <div class="testimonial">
+                <p>"After looking for a bunch of agencies, we found this drafting company. The staff is super professional in communicating with clients. They delivered the most precise 3D models. The final products are delivered with the fastest turnaround time."</p>
+                <strong>- Bob Henry</strong><br>★★★★★
+            </div>
         </div>
     </div>
 </section>

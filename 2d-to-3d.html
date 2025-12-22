@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samples - PRO CAD DRAFTER</title>
+    <title>2D To 3D CAD Conversion Services - PRO CAD DRAFTER</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
@@ -24,8 +24,8 @@
         .mega-menu a:hover{color:#f0ad4e;padding-left:12px}
         @keyframes fadeIn{from{opacity:0;transform:translateY(-20px) translateX(-50%)}to{opacity:1;transform:translateY(0) translateX(-50%)}}
         .hero{background:linear-gradient(rgba(0,31,63,0.88),rgba(0,31,63,0.88)),url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=1600') center/cover no-repeat;
-              height:80vh;display:flex;align-items:center;text-align:center;color:#fff}
-        .hero h1{font-size:68px;margin-bottom:25px;color:#f0ad4e}
+              height:90vh;display:flex;align-items:center;text-align:center;color:#fff}
+        .hero h1{font-size:68px;margin-bottom:25px}
         .hero p{font-size:24px;max-width:1000px;margin:0 auto 45px;opacity:0.95}
         .btn{display:inline-block;padding:18px 48px;border-radius:50px;font-weight:bold;text-decoration:none;transition:0.4s;margin:12px;font-size:18px}
         .btn-gold{background:#f0ad4e;color:#001f3f}
@@ -34,18 +34,33 @@
         .section{padding:100px 0}
         .section h2{font-size:48px;color:#001f3f;margin-bottom:70px;text-align:center;position:relative}
         .section h2:after{content:'';width:120px;height:5px;background:#f0ad4e;display:block;margin:25px auto}
-        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:40px;padding:0 20px}
-        .gallery-item{background:#fff;padding:30px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center;transition:0.4s}
-        .gallery-item:hover{transform:translateY(-10px);box-shadow:0 25px 50px rgba(0,0,0,0.15)}
-        .gallery-item img{width:100%;height:auto;border-radius:15px;margin-bottom:20px}
-        .gallery-item h3{font-size:24px;color:#001f3f;margin-bottom:15px}
-        .gallery-item p{font-size:16px;color:#666}
-        footer{background:#001f3f;color:#fff;padding:80px 20px 40px;text-align:center}
+        .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin:80px 0}
+        .service-item{background:#fff;padding:35px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center}
+        .service-item i{font-size:60px;color:#f0ad4e;margin-bottom:25px}
+        .why-section{background:#001f3f;color:#fff;padding:120px 0}
+        .why-flex{display:flex;gap:80px;align-items:center;flex-wrap:wrap}
+        .why-text{flex:1;min-width:300px}
+        .why-text h2{font-size:48px;margin-bottom:30px}
+        .why-text p{font-size:20px;margin-bottom:25px}
+        .why-text ul{margin:30px 0;padding-left:30px;font-size:18px}
+        .why-text li{margin:15px 0}
+        .why-img{flex:1;min-width:300px}
+        .why-img img{width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+        .partners{margin:80px 0;text-align:center}
+        .partners img{height:60px;margin:0 30px;opacity:0.8}
+        .additional{background:#f8f9fa;padding:100px 0}
+        .additional-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+        .additional-item{background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);text-align:center}
+        .additional-item i{font-size:55px;color:#f0ad4e;margin-bottom:20px}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px}
+        .testimonial{background:rgba(255,255,255,0.1);padding:40px;border-radius:20px}
+        footer{background:#001f3f;color:#fff;padding:100px 20px 40px;text-align:center}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:60px;margin-bottom:60px}
         .footer-links a{color:#ccc;display:block;margin:15px 0;text-decoration:none;font-size:15px}
         .social a{color:#fff;font-size:28px;margin:0 18px;transition:0.3s}
         .social a:hover{color:#f0ad4e;transform:scale(1.3)}
-        @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}}
+        @media(max-width:992px){.mega-menu{width:90%;left:5%;transform:none;grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}.why-flex{flex-direction:column;text-align:center}}
     </style>
 </head>
 <body>
@@ -150,62 +165,161 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <h1>Project Samples</h1>
-        <p>Explore our extensive portfolio of high-quality CAD samples across all services. Each sample showcases precision, attention to detail, and professional excellence that PRO CAD DRAFTER delivers to every client.</p>
+        <h1>2D To 3D CAD Conversion Services</h1>
+        <p>2D to 3D conversion is crucial in transforming complex information more effectively in engineering contexts. Let CAD Drafter elevate your 3D modeling and 2D drafting projects with our specialized 2D to 3D CAD conversion services. Don’t worry if you need help with a lack of experience or time. Our seasoned team of CAD engineers and designers incorporate the requested details with accuracy, ensuring exceptional-quality services.</p>
+        <a href="about.html" class="btn btn-gold">About Us</a>
+        <a href="contact.html" class="btn btn-outline">Get A Quote</a>
     </div>
 </section>
 
-<!-- SAMPLES GALLERY -->
+<!-- 2D TO 3D CONVERSION SERVICES FROM CAD DRAFTER -->
 <section class="section">
     <div class="container">
-        <h2>Our Sample Gallery</h2>
-        <div class="gallery">
-            <!-- Mẫu ví dụ – bạn có thể thay bằng hình thật hoặc giữ placeholder -->
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="2D Drafting Sample">
-                <h3>2D Drafting Services</h3>
-                <p>Precise floor plans and technical drawings for residential and commercial projects.</p>
+        <h2>2D To 3D Conversion Services From CAD Drafter</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            Using cutting-edge 2D to 3D conversion software, we expertly handle your project right from start to finish. For every architectural construction project undertaken, we strive for 99.9% precision, also backed up by professional managers overseeing all drawing reports. We are your one-stop shop for access to highly qualified CAD designers. We know how much you have on your plate and want to help ease the load as much as possible. So, hire us now.
+        </p>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            <strong>Our 2D Drawing To 3D Model Conversion Services</strong><br>
+            It would help if you trusted us with your 2-dimensional to 3-dimensional CAD conversion needs. We offer various 2D drawing to 3D model conversion services, including the following:
+        </p>
+        <div class="service-list">
+            <div class="service-item">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>AutoCAD Drafting</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092921461-6ac1e3f8e9b3?w=800" alt="3D Modeling Sample">
-                <h3>3D Modeling & Rendering</h3>
-                <p>Realistic 3D models and photorealistic renders for visualization and presentation.</p>
+            <div class="service-item">
+                <i class="fas fa-cog"></i>
+                <h3>Machine Drawing Services</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092580495-e0d23cbdf1dc?w=800" alt="MEP Drafting Sample">
-                <h3>MEP & HVAC Drafting</h3>
-                <p>Detailed mechanical, electrical, and plumbing system layouts.</p>
+            <div class="service-item">
+                <i class="fas fa-print"></i>
+                <h3>3D Printing Design</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092160607-36f3e76f5f9c?w=800" alt="Architectural Sample">
-                <h3>Architectural Design</h3>
-                <p>Complete architectural plans from concept to construction documents.</p>
+            <div class="service-item">
+                <i class="fas fa-cube"></i>
+                <h3>2D CAD Drafting</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581094796134-308a0c8e9e2e?w=800" alt="Interior Design Sample">
-                <h3>Interior Design & Rendering</h3>
-                <p>Stunning interior visualizations for residential and commercial spaces.</p>
+            <div class="service-item">
+                <i class="fas fa-box"></i>
+                <h3>Product Design</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581093577422-6f9f5c3e450d?w=800" alt="Shop Drawing Sample">
-                <h3>Shop & Fabrication Drawings</h3>
-                <p>Accurate shop drawings for steel, millwork, and custom fabrication.</p>
+            <div class="service-item">
+                <i class="fas fa-tools"></i>
+                <h3>Prototyping</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581092335397-0cace2e6b5f3?w=800" alt="Landscape Sample">
-                <h3>Landscape & Exterior Design</h3>
-                <p>Beautiful outdoor spaces and landscape architecture designs.</p>
+            <div class="service-item">
+                <i class="fas fa-laptop"></i>
+                <h3>Computer Modeling</h3>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1581093583712-8e9e291a9a3d?w=800" alt="BIM Modeling Sample">
-                <h3>BIM & Coordination</h3>
-                <p>Integrated BIM models with clash detection and coordination.</p>
+            <div class="service-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Stress Testing</h3>
             </div>
-            <!-- Thêm nhiều mẫu nếu cần -->
+            <div class="service-item">
+                <i class="fas fa-puzzle-piece"></i>
+                <h3>Assembly Modeling</h3>
+            </div>
         </div>
         <div style="text-align:center;margin-top:60px;">
-            <a href="contact.html" class="btn btn-gold">Request Custom Sample</a>
-            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Your Plans</a>
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Plans</a>
+        </div>
+    </div>
+</section>
+
+<!-- ROLE OF AUTOCAD 2D TO 3D CONVERSION -->
+<section class="why-section">
+    <div class="container why-flex">
+        <div class="why-text">
+            <h2>Role Of AutoCAD 2D To 3D Conversion</h2>
+            <p>The 2D to 3D Conversion Services are crucial for your next design project. 2D drafting can be a very good way to start, but it will not provide you with the desired final product. So, converting your 2D drawings into 3D modeling can make measurement errors and mistakes be identified very easily. Adding more to this, 2D to 3D conversion can improve accuracy and precision, allowing for more advanced simulations. With our 2D to 3D picture conversion, designers can generate complex assemblies and geometries with tight tolerances, and manipulate their 3D models in real-time. Let us help you step in the best direction regarding your drafting project.</p>
+            <p>Unveil the potential of your highly-valued designs with our 2D to 3D conversion in the time to assistance. The following are some reasons to outsource CAD conversion to our company:</p>
+            <ul>
+                <li>We provide industry-leading design results at unbeatable and highly affordable prices.</li>
+                <li>Our expert designers and engineers are 24/7 available to serve you with the best services.</li>
+                <li>On top of that, each project at our company is overseen by international standards.</li>
+            </ul>
+            <a href="contact.html" class="btn btn-gold">Upload Plans</a>
+            <a href="contact.html" class="btn btn-outline" style="border-color:#f0ad4e;color:#f0ad4e">Book A Meeting</a>
+        </div>
+        <div class="why-img">
+            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="2D to 3D Conversion">
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Autodesk_Revit_Logo.png/800px-Autodesk_Revit_Logo.png" alt="Revit">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Autodesk_AutoCAD_2020.svg/800px-Autodesk_AutoCAD_2020.svg.png" alt="AutoCAD">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Tekla_Structures_Logo.svg/800px-Tekla_Structures_Logo.svg.png" alt="Tekla">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Trimble_logo.svg/800px-Trimble_logo.svg.png" alt="Trimble">
+</div>
+
+<!-- BENEFITS OF 2D TO 3D CAD CONVERSION SERVICES -->
+<section class="additional section">
+    <div class="container">
+        <h2>Benefits Of 2D To 3D CAD Conversion Services</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            As one of the best 2D to 3D conversion companies in the USA, we understand how 2D to 3D conversion is essential for manufacturing processes. For this reason, we ensure to deliver results as per your expectations. Our designer team is not just limited to creating 3D models, but they can also help you with simulation, testing, and real-world applications. Because of the diversified technical knowledge of our 2-dimensional to 3-dimensional conversion team, we adjust our service packages to deliver as per your desired technical needs.
+        </p>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
+            Above all, we have flexibility in output and input file types and stay updated with the latest versions of software to ensure precision. However, below are some crucial skills similar to our 2D to 3D floor plan conversion services you must be aware of. Have a look below:
+        </p>
+        <div class="additional-grid">
+            <div class="additional-item">
+                <i class="fas fa-wrench"></i>
+                <h3>Mechanical Engineer Designers</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-cogs"></i>
+                <h3>SolidWorks Designers</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>Autodesk Inventor Designers</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-cube"></i>
+                <h3>3D Studio Max Designers</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-palette"></i>
+                <h3>Rendering Designers</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-tools"></i>
+                <h3>Pro-E/PTC Creo Parametric Designers</h3>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:60px;">
+            <a href="samples.html" class="btn btn-gold">Sample</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:#001f3f;color:#fff;">
+    <div class="container">
+        <h2>Testimonials</h2>
+        <p style="font-size:20px;max-width:900px;margin:0 auto 60px;">
+            We have worked on various design and drafting projects till now. With the help of our expert designer and engineering team, we've always been able to deliver work with excellence. Are you thinking of hiring our services, but feeling hesitant? No worries. Check our client reviews below.
+        </p>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"I am super impressed with the quick response and exceptional 2D to 3D conversion services of this company. They delivered our project within budget and on the designated timeline. It was a great experience. I will look forward to working with them in the future. Wonderful job!"</p>
+                <strong>- Shawn Henry</strong><br>★★★★★
+            </div>
+            <div class="testimonial">
+                <p>"The experts of this firm addressed my urgent tasks with utmost priority. Aside from this, I am very much pleased with the overall quality of services and the super-friendly behavior of their staff. I can't thank them enough for delivering the best possible results. Much recommended."</p>
+                <strong>- Nick Jonathan</strong><br>★★★★★
+            </div>
+            <div class="testimonial">
+                <p>"We needed to convert our 2D architectural drawings into 3D models on an urgent basis. One of our colleagues recommended this firm. They worked on our project with attention to detail. Every single aspect was covered efficiently. They helped us build a strong business reputation."</p>
+                <strong>- Sam Smith</strong><br>★★★★★
+            </div>
         </div>
     </div>
 </section>

@@ -3,140 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro CAD Drafter - Home</title>
+    <title>PROCADDRAFTER - Expert CAD Drafting & BIM Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; color: #333; background-color: #f4f4f4; }
-        header { background-color: #001f3f; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: bold; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: white; text-decoration: none; }
-        .sidebar { width: 250px; background-color: #fff; padding: 20px; position: absolute; top: 80px; left: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .sidebar h3 { color: #001f3f; font-size: 18px; margin-bottom: 10px; }
-        .sidebar ul { list-style: none; padding: 0; }
-        .sidebar ul li { margin-bottom: 5px; }
-        .sidebar ul li a { color: #f0ad4e; text-decoration: none; }
-        .content { margin-left: 280px; padding: 20px; color: #001f3f; }
-        .hero { background-color: #001f3f; color: white; text-align: center; padding: 60px 20px; background-image: url('images/home-overview.jpg'); background-size: cover; background-position: center; }
-        .hero h1 { font-size: 36px; margin-bottom: 20px; }
-        .hero p { max-width: 800px; margin: 0 auto 30px; }
-        .btn { background-color: #f0ad4e; color: #001f3f; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin: 10px; }
-        .services { display: flex; flex-wrap: wrap; padding: 40px 20px; background-color: #001f3f; color: white; }
-        .services-img { flex: 1 1 300px; background-size: cover; min-height: 300px; }
-        .services-content { flex: 1 1 400px; padding: 20px; }
-        .services h2 { font-size: 28px; }
-        @media (max-width: 768px) { .sidebar { position: static; width: 100%; } .content { margin-left: 0; } .services { flex-direction: column; } }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Arial,sans-serif;background:#f8f9fa;color:#333;line-height:1.6}
+        .container{width:90%;max-width:1280px;margin:auto}
+        header{background:#001f3f;padding:18px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 5px 20px rgba(0,0,0,0.15)}
+        .header-flex{display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:62px}
+        nav ul{display:flex;gap:45px;list-style:none}
+        nav a{color:#fff;text-decoration:none;font-weight:600;font-size:16px;transition:0.3s}
+        nav a:hover{color:#f0ad4e}
+        .dropdown{position:relative}
+        .dropdown:hover .mega-menu{display:grid;animation:fadeIn .45s}
+        .mega-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:980px;background:#fff;border-radius:16px;
+                  box-shadow:0 25px 50px rgba(0,0,0,0.22);padding:40px;grid-template-columns:repeat(4,1fr);gap:35px;z-index:999}
+        .mega-menu h4{color:#001f3f;margin-bottom:20px;font-size:17px;border-bottom:3px solid #f0ad4e;padding-bottom:10px}
+        .mega-menu a{display:block;padding:10px 0;color:#444;font-size:15px;text-decoration:none;transition:0.3s}
+        .mega-menu a:hover{color:#f0ad4e;padding-left:12px}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(-20px) translateX(-50%)}to{opacity:1;transform:translateY(0) translateX(-50%)}}
+        .hero{background:linear-gradient(rgba(0,31,63,0.90),rgba(0,31,63,0.90)),url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1600') center/cover no-repeat;
+              height:100vh;display:flex;align-items:center;text-align:center;color:#fff}
+        .hero h1{font-size:64px;margin-bottom:25px;letter-spacing:1px}
+        .hero p{font-size:24px;max-width:900px;margin:0 auto 45px;opacity:0.95}
+        .btn{display:inline-block;padding:18px 45px;border-radius:50px;font-weight:bold;text-decoration:none;transition:0.4s;margin:12px;font-size:18px}
+        .btn-gold{background:#f0ad4e;color:#001f3f}
+        .btn-outline{background:transparent;color:#fff;border:3px solid #fff}
+        .btn:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(240,173,78,0.5)}
+        .section{padding:110px 0;text-align:center}
+        .section h2{font-size:48px;color:#001f3f;margin-bottom:70px;position:relative}
+        .section h2:after{content:'';width:100px;height:4px;background:#f0ad4e;display:block;margin:20px auto}
+        .exp{background:#001f3f;color:#fff}
+        .exp-number{font-size:100px;font-weight:900;color:#f0ad4e;line-height:1}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin-top:60px}
+        .service-card{background:#fff;padding:45px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);transition:0.4s;height:100%}
+        .service-card:hover{transform:translateY(-20px);box-shadow:0 30px 60px rgba(0,0,0,0.18)}
+        .service-card img{width:100px;margin-bottom:30px}
+        .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:50px;margin:70px 0}
+        .why-item i{font-size:70px;color:#f0ad4e;margin-bottom:25px}
+        .why-item h3{font-size:24px;margin-bottom:15px}
+        footer{background:#001f3f;color:#fff;padding:90px 20px 40px;text-align:center}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:50px;margin-bottom:60px}
+        .footer-links a{color:#ccc;display:block;margin:15px 0;text-decoration:none;font-size:15px}
+        .footer-links a:hover{color:#f0ad4e}
+        .social a{color:#fff;font-size:28px;margin:0 15px;transition:0.3s}
+        .social a:hover{color:#f0ad4e;transform:scale(1.2)}
+        @media(max-width:992px){.mega-menu{width:90%;left:5%;transform:none;grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){.hero h1{font-size:44px}.hero p{font-size:19px}nav ul{flex-direction:column;background:#001f3f;position:absolute;top:80px;left:0;width:100%;display:none;padding:20px 0}nav ul.active{display:flex}.mobile-toggle{display:block;color:#fff;font-size:28px;cursor:pointer}}
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">PRO CAD DRAFTER</div>
+
+<header>
+    <div class="container header-flex">
+        <a href="index.html" class="logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9Ijc1IiB2aWV3Qm94PSIwIDAgMjYwIDc1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIyNjAiIGhlaWdodD0iNzUiIHJ4PSIyMCIgZmlsbD0iI2YwYWQ0ZSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU1LDE1KSI+CiAgICA8cGF0aCBkPSJNMCAwIEw2MCwwIEw2MCw0NSBMMzAsNjUgTDAgNDUgWiIgZmlsbD0iIzAwMWYzZiIvPgogICAgPHBhdGggZD0iTTMwLDIyIEw3OCwyMiBMNzgsNjUgTDMwLDY1IFoiIGZpbGw9IiMwMDFmM2YiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNDUiIHI9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NSIgcj0iMTAiIGZpbGw9IiNmZmYiLz4KICA8L2c+CiAgPHRleHQgeD0iMTAwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMDAxZjNmIj5QUk8gQ0FEIERSQUZURVI8L3RleHQ+Cjwvc3ZnPg==" alt="PRO CAD DRAFTER" style="height:65px;">
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="mega-menu">
+                        <!-- CỘT 1: CAD Services -->
+                        <div class="menu-column">
+                            <h4>CAD Services</h4>
+                            <a href="2d-drafting.html">2D Drafting Services</a>
+                            <a href="3d-drafting.html">3D Drafting Services</a>
+                            <a href="mep-drafting.html">MEP Drafting Services</a>
+                            <a href="mechanical-drafting.html">Mechanical Drafting Services</a>
+                            <a href="civil-drafting.html">Civil Drafting Services</a>
+                            <a href="architectural-drafting.html">Architectural Drafting Services</a>
+                            <a href="hvac-drafting.html">HVAC Drafting Services</a>
+                            <a href="residential-drafting.html">Residential Drafting Services</a>
+                            <a href="cad-conversion.html">CAD Conversion Services</a>
+                            <a href="pdf-to-cad.html">PDF to CAD Conversion Services</a>
+                            <a href="3d-scan-to-cad.html">3D Scan to CAD Service</a>
+                        </div>
+
+                        <!-- CỘT 2: Design Services -->
+                        <div class="menu-column">
+                            <h4>Design Services</h4>
+                            <a href="3d-cad-design.html">3D CAD Design Services</a>
+                            <a href="mechanical-design.html">Mechanical Design Services</a>
+                            <a href="interior-drafting.html">Interior Design Drafting Services</a>
+                            <a href="interior-design.html">Interior Design Services</a>
+                            <a href="exterior-design.html">Exterior Design Services</a>
+                            <a href="autocad-drawing.html">AutoCAD Drawing Services</a>
+                            <a href="contract-drafting.html">Contract Drafting Services</a>
+                            <a href="2d-to-3d.html">2D to 3D CAD Conversion Services</a>
+                            <a href="landscape-design.html">Landscaping Design Services</a>
+                            <a href="autocad-design.html">AutoCAD Design Services</a>
+                            <a href="commercial-design.html">Commercial Design Services</a>
+                            <a href="cad-digitization.html">CAD Digitization Services</a>
+                            <a href="building-measurement.html">Building Measurement Services</a>
+                            <a href="shop-drawing.html">Shop Drawing Services</a>
+                            <a href="swimming-pool.html">Swimming Pool Design</a>
+                            <a href="home-design.html">Home Design Services</a>
+                        </div>
+
+                        <!-- CỘT 3: Rendering Services -->
+                        <div class="menu-column">
+                            <h4>Rendering Services</h4>
+                            <a href="3d-real-estate.html">3D Real Estate Rendering</a>
+                            <a href="3d-floor-plan.html">3D Floor Plan Rendering Services</a>
+                            <a href="photorealistic.html">Photorealistic Rendering Services</a>
+                            <a href="3d-product.html">3D Product Rendering Service</a>
+                            <a href="3d-rendering.html">3D Rendering Services</a>
+                            <a href="3d-exterior.html">3D Exterior Rendering Services</a>
+                            <a href="3d-furniture.html">3D Furniture Rendering</a>
+                            <a href="3d-visualization.html">3D Visualization Services</a>
+                            <a href="3d-home.html">3D Home Rendering Services</a>
+                            <a href="millwork-drafting.html">Millwork Drafting Services</a>
+                            <a href="civil-engineering.html">Civil Engineering Services</a>
+                            <a href="solar-design.html">Solar Design Services</a>
+                            <a href="glazing-shop.html">Glazing Shop Drawings Services</a>
+                            <a href="clash-coordination.html">Clash Coordination Services</a>
+                        </div>
+
+                        <!-- CỘT 4: Architectural Modeling Services -->
+                        <div class="menu-column">
+                            <h4>Architectural Modeling Services</h4>
+                            <a href="architectural-3d.html">Architectural 3D Modeling Services</a>
+                            <a href="architectural-bim.html">Architectural BIM Services</a>
+                            <a href="architectural-site-plans.html">Architectural Site Plans</a>
+                            <a href="structural-steel.html">Structural Steel Detailing</a>
+                            <a href="bim-modeling.html">BIM Modeling Services</a>
+                            <a href="point-cloud.html">Point Cloud Modeling Services</a>
+                            <a href="bim-outsourcing.html">BIM Outsourcing Services</a>
+                            <a href="bim-coordination.html">BIM Coordination Services</a>
+                            <a href="virtual-design.html">Virtual Design And Construction</a>
+                            <a href="renovation-design.html">Renovation Design Services</a>
+                            <a href="architectural-rendering.html">Architectural Rendering Services</a>
+                            <a href="architectural-design.html">Architectural Design Services</a>
+                            <a href="architectural-engineering.html">Architectural Engineering Services</a>
+                            <a href="structural-design.html">Structural Design/Drafting Services</a>
+                            <a href="tekla-detailing.html">Tekla Detailing Services</a>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="samples.html">Samples</a></li>
                 <li><a href="blogs.html">Blogs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
-
-    <div class="sidebar">
-        <h3>CAD Services</h3>
-        <ul>
-            <li><a href="services.html#2d-drafting">2D Drafting Services</a></li>
-            <li><a href="services.html#3d-drafting">3D Drafting Services</a></li>
-            <li><a href="services.html#mep-drafting">MEP Drafting Services</a></li>
-            <li><a href="services.html#mechanical-drafting">Mechanical Drafting Services</a></li>
-            <li><a href="services.html#civil-drafting">Civil Drafting Services</a></li>
-            <li><a href="services.html#architectural-drafting">Architectural Drafting Services</a></li>
-            <li><a href="services.html#hvac-drafting">HVAC Drafting Services</a></li>
-            <li><a href="services.html#electrical-drafting">Electrical Drafting Services</a></li>
-            <li><a href="services.html#residential-drafting">Residential Drafting Services</a></li>
-            <li><a href="services.html#cad-conversion">CAD Conversion Services</a></li>
-            <li><a href="services.html#pdf-to-cad">PDF to CAD Conversion Services</a></li>
-            <li><a href="services.html#3d-scan">3D Scan to CAD Service</a></li>
-        </ul>
-        <h3>Design Services</h3>
-        <ul>
-            <li><a href="services.html#3d-cad-design">3D CAD Design Services</a></li>
-            <li><a href="services.html#mechanical-design">Mechanical Design Services</a></li>
-            <li><a href="services.html#interior-drafting">Interior Design Drafting Services</a></li>
-            <li><a href="services.html#interior-design">Interior Design Services</a></li>
-            <li><a href="services.html#exterior-design">Exterior Design Services</a></li>
-            <li><a href="services.html#autocad-drawing">AutoCAD Drawing Services</a></li>
-            <li><a href="services.html#contract-drafting">Contract Drafting Services</a></li>
-            <li><a href="services.html#2d-to-3d">2D to 3D Conversion Services</a></li>
-            <li><a href="services.html#landscape-design">Landscape Design Services</a></li>
-            <li><a href="services.html#autocad-design">AutoCAD Design Services</a></li>
-            <li><a href="services.html#commercial-design">Commercial Design Services</a></li>
-            <li><a href="services.html#cad-digitization">CAD Digitization Services</a></li>
-            <li><a href="services.html#building-measurement">Building Measurement Services</a></li>
-            <li><a href="services.html#shop-drawing">Shop Drawing Services</a></li>
-            <li><a href="services.html#swimming-pool">Swimming Pool Design</a></li>
-            <li><a href="services.html#home-design">Home Design Services</a></li>
-        </ul>
-        <h3>Rendering Services</h3>
-        <ul>
-            <li><a href="services.html#3d-real-estate">3D Real Estate Rendering</a></li>
-            <li><a href="services.html#3d-floor-plan">3D Floor Plan Rendering Services</a></li>
-            <li><a href="services.html#photorealistic">Photorealistic Rendering Services</a></li>
-            <li><a href="services.html#3d-product">3D Product Rendering Service</a></li>
-            <li><a href="services.html#3d-rendering">3D Rendering Services</a></li>
-            <li><a href="services.html#3d-exterior">3D Exterior Rendering Services</a></li>
-            <li><a href="services.html#3d-furniture">3D Furniture Rendering</a></li>
-            <li><a href="services.html#3d-visualization">3D Visualization Services</a></li>
-            <li><a href="services.html#3d-home">3D Home Rendering Services</a></li>
-            <li><a href="services.html#millwork">Millwork Drafting Services</a></li>
-            <li><a href="services.html#civil-engineering">Civil Engineering Services</a></li>
-            <li><a href="services.html#solar-design">Solar Design Services</a></li>
-            <li><a href="services.html#glazing">Glazing Shop Drawings Services</a></li>
-            <li><a href="services.html#clash-coordination">Clash Coordination Services</a></li>
-        </ul>
-        <h3>Architectural Modeling Services</h3>
-        <ul>
-            <li><a href="services.html#architectural-3d">Architectural 3D Modeling Services</a></li>
-            <li><a href="services.html#architectural-bim">Architectural BIM Services</a></li>
-            <li><a href="services.html#site-plans">Architectural Site Plans</a></li>
-            <li><a href="services.html#steel-detailing">Structural Steel Detailing</a></li>
-            <li><a href="services.html#bim-modeling">BIM Modeling Services</a></li>
-            <li><a href="services.html#point-cloud">Point Cloud Modeling Services</a></li>
-            <li><a href="services.html#outsourcing">Outsourcing Services</a></li>
-            <li><a href="services.html#coordination">Coordination Services</a></li>
-            <li><a href="services.html#virtual-design">Virtual Design And Construction</a></li>
-            <li><a href="services.html#renovation">Renovation Design Services</a></li>
-            <li><a href="services.html#architectural-rendering">Architectural Rendering Services</a></li>
-            <li><a href="services.html#architectural-design">Architectural Design Services</a></li>
-            <li><a href="services.html#architectural-engineering">Architectural Engineering Services</a></li>
-            <li><a href="services.html#structural-design">Structural Design/Drafting Services</a></li>
-            <li><a href="services.html#tekla-detailing">Tekla Detailing Services</a></li>
-        </ul>
     </div>
+</header>
 
-    <div class="content">
-        <section class="hero">
-            <h1>Expert CAD Drafting Services</h1>
-            <p>We provide high-quality CAD design and drafting services to support your construction projects with precision and innovation.</p>
-            <a href="contact.html" class="btn">Book a Meeting</a>
-            <a href="contact.html" class="btn">Contact Us</a>
-        </section>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <h1>Expert CAD Drafting & BIM Services</h1>
+        <p>High-quality 2D/3D drafting, BIM coordination, shop drawings, and rendering for architects, engineers & contractors worldwide. 25+ years experience • 5000+ projects delivered</p>
+        <a href="contact.html" class="btn btn-gold">Get Free Quote</a>
+        <a href="contact.html" class="btn btn-outline">Upload Plans</a>
+    </div>
+</section>
 
-        <section class="services">
-            <div class="services-img"></div>
-            <div class="services-content">
-                <h2>Welcome to Pro CAD Drafter</h2>
-                <p>Our expert team uses advanced tools like AutoCAD and Civil 3D to deliver accurate blueprints and designs for various industries.</p>
-                <img src="images/home-overview.jpg" alt="CAD Drafting Overview - A detailed blueprint on a desk with drafting tools, symbolizing precision and innovation in construction projects.">
+<!-- 25+ YEARS -->
+<section class="section exp">
+    <div class="container">
+        <h2 class="exp-number">25+</h2>
+        <p style="font-size:38px;margin:20px 0 15px 0;">Years of Excellence</p>
+        <p style="font-size:20px;max-width:700px;margin:auto;">Trusted by architects, builders, and contractors in USA, Canada, UK, Australia & worldwide</p>
+    </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section">
+    <div class="container">
+        <h2>Our Professional CAD Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160607-ada7f7f9b3a8?w=800" alt="2D Drafting">
+                <h3>2D Drafting Services</h3>
+                <p>Accurate floor plans, elevations, sections & construction details</p>
             </div>
-        </section>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800" alt="3D Modeling">
+                <h3>3D Modeling & Drafting</h3>
+                <p>Complete 3D visualization & clash-free coordination</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="MEP">
+                <h3>MEP Drafting Services</h3>
+                <p>Mechanical, Electrical & Plumbing system coordination</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" alt="BIM">
+                <h3>BIM Services</h3>
+                <p>Revit modeling, clash detection, 4D/5D BIM</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160607-ada7f7f9b3a8?w=800" alt="Steel Detailing">
+                <h3>Structural Steel Detailing</h3>
+                <p>Tekla & Advance Steel fabrication drawings</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="Rendering">
+                <h3>3D Rendering & Visualization</h3>
+                <p>Photorealistic interior & exterior renders</p>
+            </div>
+        </div>
     </div>
+</section>
 
-    <footer style="background-color: #001f3f; color: white; padding: 20px; text-align: center;">
-        <div class="logo">PRO CAD DRAFTER</div>
-        <p>Follow us: <a href="#">LinkedIn</a> | <a href="#">X</a></p>
-        <p>&copy; 2025 Pro CAD Drafter. All rights reserved.</p>
-    </footer>
+<!-- WHY CHOOSE US -->
+<section class="section" style="background:#001f3f;color:#fff;">
+    <div class="container">
+        <h2>Why Choose PROCADDRAFTER?</h2>
+        <div class="why-grid">
+            <div class="why-item"><i class="fas fa-check-circle"></i><h3>99.9% Accuracy Rate</h3></div>
+            <div class="why-item"><i class="fas fa-clock"></i><h3>24/7 Dedicated Support</h3></div>
+            <div class="why-item"><i class="fas fa-dollar-sign"></i><h3>Best Price Guarantee</h3></div>
+            <div class="why-item"><i class="fas fa-shield-alt"></i><h3>100% Confidential</h3></div>
+            <div class="why-item"><i class="fas fa-sync"></i><h3>Unlimited Revisions</h3></div>
+            <div class="why-item"><i class="fas fa-globe"></i><h3>Global Delivery Network</h3></div>
+        </div>
+        <div style="text-align:center;margin-top:70px;">
+            <a href="contact.html" class="btn btn-gold" style="font-size:20px;padding:20px 60px;">Start Your Project Today</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMjIwIDcwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIyMjAiIGhlaWdodD0iNzAiIHJ4PSIyMCIgZmlsbD0iI2YwYWQ0ZSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwLDE1KSI+CiAgICA8cGF0aCBkPSJNMCAwIEw1MCwwIEw1MCw0MCBMMjUsNjAgTDAgNDAgWiIgZmlsbD0iIzAwMWYzZiIvPgogICAgPHBhdGggZD0iTTI1LDIwIEw2NSwyMCBMNjUsNjAgTDI1LDYwIFoiIGZpbGw9IiMwMDFmM2YiLz4KICAgIDxjaXJjbGUgY3g9IjQ1IiBjeT0iNDAiIHI9IjE4IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogICAgPGNpcmNsZSBjeD0iNDUiIGN5PSI0MCIgcj0iOSIgc3R5bGU9ImZpbGw6I2ZmZiIvPgogIDwvZz4KICA8dGV4dCB4PSI5MCIgeT0iNDMiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzAwMWYzZiI+UFJPQ0FERFJBRlRFUjwvdGV4dD4KPC9zdmc+" alt="PROCADDRAFTER" style="height:60px;">
+            <p style="margin-top:20px;">Expert CAD Drafting & BIM Services Worldwide</p>
+        </div>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="services.html">All Services</a>
+            <a href="samples.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+            <a href="blogs.html">Blog</a>
+        </div>
+        <div class="social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <p style="color:#888;margin-top:50px;">© 2025 PROCADDRAFTER. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
