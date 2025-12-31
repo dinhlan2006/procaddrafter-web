@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIM Services - PRO CAD DRAFTER</title>
+    <title>CAD Conversion Services - PRO CAD DRAFTER</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
@@ -17,15 +17,15 @@
         nav a:hover{color:#f0ad4e}
         .dropdown{position:relative}
         .dropdown:hover .mega-menu{display:grid;animation:fadeIn .45s}
-        .mega-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:980px;background:#fff;border-radius:16px;
-                  box-shadow:0 25px 50px rgba(0,0,0,0.22);padding:40px;grid-template-columns:repeat(4,1fr);gap:35px;z-index:999}
-        .mega-menu h4{color:#001f3f;margin-bottom:20px;font-size:17px;border-bottom:3px solid #f0ad4e;padding-bottom:10px}
+        .mega-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:1200px;background:#fff;border-radius:16px;
+                  box-shadow:0 25px 50px rgba(0,0,0,0.22);padding:40px;grid-template-columns:repeat(4,1fr);gap:40px;z-index:999}
+        .mega-menu h4{color:#001f3f;margin-bottom:20px;font-size:18px;border-bottom:3px solid #f0ad4e;padding-bottom:10px}
         .mega-menu a{display:block;padding:10px 0;color:#444;font-size:15px;text-decoration:none;transition:0.3s}
         .mega-menu a:hover{color:#f0ad4e;padding-left:12px}
         @keyframes fadeIn{from{opacity:0;transform:translateY(-20px) translateX(-50%)}to{opacity:1;transform:translateY(0) translateX(-50%)}}
-        .hero{background:linear-gradient(rgba(0,31,63,0.88),rgba(0,31,63,0.88)),url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600') center/cover no-repeat;
+        .hero{background:linear-gradient(rgba(0,31,63,0.88),rgba(0,31,63,0.88)),url('images/cad-conversion-before-after.jpg') center/cover no-repeat;
               height:90vh;display:flex;align-items:center;text-align:center;color:#fff}
-        .hero h1{font-size:68px;margin-bottom:25px}
+        .hero h1{font-size:68px;margin-bottom:25px;color:#f0ad4e}
         .hero p{font-size:24px;max-width:1000px;margin:0 auto 45px;opacity:0.95}
         .btn{display:inline-block;padding:18px 48px;border-radius:50px;font-weight:bold;text-decoration:none;transition:0.4s;margin:12px;font-size:18px}
         .btn-gold{background:#f0ad4e;color:#001f3f}
@@ -35,12 +35,13 @@
         .section h2{font-size:48px;color:#001f3f;margin-bottom:70px;text-align:center;position:relative}
         .section h2:after{content:'';width:120px;height:5px;background:#f0ad4e;display:block;margin:25px auto}
         .service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin:80px 0}
-        .service-item{background:#fff;padding:35px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center}
+        .service-item{background:#fff;padding:35px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.1);text-align:center;transition:0.4s}
+        .service-item:hover{transform:translateY(-10px)}
         .service-item i{font-size:60px;color:#f0ad4e;margin-bottom:25px}
         .why-section{background:#001f3f;color:#fff;padding:120px 0}
         .why-flex{display:flex;gap:80px;align-items:center;flex-wrap:wrap}
         .why-text{flex:1;min-width:300px}
-        .why-text h2{font-size:48px;margin-bottom:30px}
+        .why-text h2{font-size:48px;margin-bottom:30px;color:#f0ad4e}
         .why-text p{font-size:20px;margin-bottom:25px}
         .why-text ul{margin:30px 0;padding-left:30px;font-size:18px}
         .why-text li{margin:15px 0}
@@ -52,17 +53,15 @@
         .additional-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
         .additional-item{background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);text-align:center}
         .additional-item i{font-size:55px;color:#f0ad4e;margin-bottom:20px}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px}
+        .testimonial{background:rgba(255,255,255,0.1);padding:40px;border-radius:20px}
         footer{background:#001f3f;color:#fff;padding:100px 20px 40px;text-align:center}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:60px;margin-bottom:60px}
         .footer-links a{color:#ccc;display:block;margin:15px 0;text-decoration:none;font-size:15px}
         .social a{color:#fff;font-size:28px;margin:0 18px;transition:0.3s}
         .social a:hover{color:#f0ad4e;transform:scale(1.3)}
-        @media(max-width:992px){.mega-menu{width:90%;left:5%;transform:none;grid-template-columns:1fr 1fr}}
         @media(max-width:768px){.hero h1{font-size:48px}.hero p{font-size:20px}.why-flex{flex-direction:column;text-align:center}}
     </style>
-</head>
-<body>
-
 </head>
 <body>
 
@@ -124,7 +123,6 @@
                             <a href="site-development-plan.html">Site Development Plans</a>
                         </div>
 
-
                         <!-- CỘT 4: BIM & Rendering (MỚI) -->
                         <div class="menu-column">
                             <h4>BIM & Rendering</h4>
@@ -151,116 +149,167 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <h1>BIM Services</h1>
-        <p>Building Information Modeling (BIM) is transforming the AEC industry with intelligent 3D models that improve coordination, reduce errors, and enhance project delivery. Our expert BIM team delivers LOD 100 to LOD 500 models using Revit, Navisworks, Tekla, and more – ensuring clash-free construction and cost-effective outcomes.</p>
+        <h1>CAD Conversion Services</h1>
+        <p>Professional conversion of paper drawings, PDF, scanned images, and legacy files into editable CAD formats (DWG, DXF). Accurate digitization and layer organization for modern design workflows.</p>
         <a href="about.html" class="btn btn-gold">About Us</a>
         <a href="contact.html" class="btn btn-outline">Get A Quote</a>
     </div>
 </section>
 
-<!-- OUR BIM SERVICES -->
+<!-- MAIN SERVICES -->
 <section class="section">
     <div class="container">
-        <h2>Our Comprehensive BIM Services</h2>
-        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;">
-            We provide end-to-end BIM solutions from conceptual design to facility management. Our certified BIM specialists ensure seamless collaboration between architects, engineers, contractors, and owners using the latest standards (ISO 19650, COBie, etc.).
+        <h2>What We Offer in CAD Conversion</h2>
+        <p style="font-size:20px;max-width:1000px;margin:0 auto 60px;text-align:center;">
+            We convert old or non-editable drawings into clean, layered, and accurate CAD files ready for editing, revision, and integration into current projects.
         </p>
         <div class="service-list">
             <div class="service-item">
+                <img src="images/paper-to-cad.jpg" alt="Paper to CAD Conversion" style="width:100%;height:200px;object-fit:cover;border-radius:15px;margin-bottom:20px;">
+                <i class="fas fa-scroll"></i>
+                <h3>Paper Drawings to CAD Digitization</h3>
+                <p>Manual redrawing of old paper archives into modern CAD standards.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/pdf-to-cad-process.jpg" alt="PDF to CAD Process" style="width:100%;height:200px;object-fit:cover;border-radius:15px;margin-bottom:20px;">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF to CAD Conversion</h3>
+                <p>Vectorization of PDF plans into editable DWG with accurate layers and dimensions.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/scanned-to-cad.jpg" alt="Scanned Blueprint to CAD" style="width:100%;height:200px;object-fit:cover;border-radius:15px;margin-bottom:20px;">
+                <i class="fas fa-image"></i>
+                <h3>Scanned Image / Raster to CAD</h3>
+                <p>Hand-drawn or scanned blueprints converted to precise vector CAD files.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/cad-conversion-before-after.jpg" alt="Before and After CAD Conversion" style="width:100%;height:200px;object-fit:cover;border-radius:15px;margin-bottom:20px;">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>Before & After Examples</h3>
+                <p>See the transformation from legacy formats to clean, editable CAD.</p>
+            </div>
+        <div class="service-list">
+            <div class="service-item">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF to CAD Conversion</h3>
+                <p>Vectorization of PDF plans into editable DWG with accurate layers and dimensions.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-image"></i>
+                <h3>Scanned Image / Raster to CAD</h3>
+                <p>Hand-drawn or scanned blueprints converted to precise vector CAD files.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-scroll"></i>
+                <h3>Paper Drawings to CAD Digitization</h3>
+                <p>Manual redrawing of old paper archives into modern CAD standards.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>Legacy CAD File Conversion</h3>
+                <p>Old AutoCAD versions, MicroStation, or other formats upgraded to current standards.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-layer-group"></i>
+                <h3>Layer & Standard Organization</h3>
+                <p>Proper layer naming, line types, text styles, and block creation per your CAD standards.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-ruler-combined"></i>
+                <h3>Dimension & Scale Accuracy</h3>
+                <p>Precise scaling and dimension verification for construction-ready files.</p>
+            </div>
+            <div class="service-item">
                 <i class="fas fa-cubes"></i>
-                <h3>3D BIM Modeling (LOD 100-500)</h3>
+                <h3>2D to 3D CAD Conversion</h3>
+                <p>Elevation of 2D plans into basic 3D models for visualization and coordination.</p>
             </div>
             <div class="service-item">
-                <i class="fas fa-search"></i>
-                <h3>Clash Detection & Coordination</h3>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>4D Construction Scheduling</h3>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-dollar-sign"></i>
-                <h3>5D Cost Estimation</h3>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-leaf"></i>
-                <h3>6D Sustainability & Energy Analysis</h3>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-tools"></i>
-                <h3>7D Facility Management</h3>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-cloud"></i>
-                <h3>Scan to BIM (Point Cloud)</h3>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-building"></i>
-                <h3>Revit Family Creation</h3>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-file-export"></i>
-                <h3>BIM Execution Plan (BEP)</h3>
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Point Cloud to CAD</h3>
+                <p>Conversion of 3D scan data into clean 2D plans or 3D models.</p>
             </div>
         </div>
         <div style="text-align:center;margin-top:60px;">
-            <a href="samples.html" class="btn btn-gold">View BIM Samples</a>
-            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Plans</a>
+            <a href="samples.html" class="btn btn-gold">View Conversion Samples</a>
+            <a href="contact.html" class="btn btn-outline" style="background:#001f3f;color:#f0ad4e;border:2px solid #f0ad4e">Upload Files</a>
         </div>
     </div>
 </section>
 
-<!-- WHY CHOOSE OUR BIM SERVICES -->
+<!-- WHY CHOOSE US -->
 <section class="why-section">
     <div class="container why-flex">
         <div class="why-text">
-            <h2>Why Choose PRO CAD DRAFTER for BIM Services?</h2>
-            <p>With 25+ years of experience and 5000+ successful projects worldwide, we are trusted by leading architects, contractors, and developers across USA, Canada, UK, Australia, and Europe.</p>
-            <p>Our BIM process ensures:</p>
+            <h2>Why Choose PRO CAD DRAFTER for CAD Conversion?</h2>
+            <p>We deliver clean, accurate, and fully editable CAD files that save time and enable seamless project continuation.</p>
             <ul>
-                <li>Up to 30% reduction in construction costs through clash detection</li>
-                <li>95%+ accuracy in quantity takeoffs and cost estimation</li>
-                <li>Real-time collaboration using cloud-based Common Data Environment (CDE)</li>
-                <li>Full compliance with international BIM standards (ISO 19650, AIA, NBS)</li>
-                <li>Dedicated project manager + 24/7 support team</li>
-                <li>100% confidentiality with NDA & secure file transfer</li>
+                <li>99.9% accuracy with multiple quality checks</li>
+                <li>Custom layer standards matching your existing templates</li>
+                <li>Fast turnaround – even for large archives</li>
+                <li>Confidential handling of all drawings and data</li>
+                <li>Experience with architectural, mechanical, civil, and MEP drawings</li>
             </ul>
-            <a href="contact.html" class="btn btn-gold">Start BIM Project</a>
-            <a href="contact.html" class="btn btn-outline" style="border-color:#f0ad4e;color:#f0ad4e">Book Free Consultation</a>
+            <a href="contact.html" class="btn btn-gold">Start Conversion Project</a>
+            <a href="contact.html" class="btn btn-outline" style="border-color:#f0ad4e;color:#f0ad4e">Book Consultation</a>
         </div>
         <div class="why-img">
-            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="BIM Coordination">
+            <img src="images/cad-conversion-before-after.jpg" alt="CAD Conversion">
         </div>
     </div>
 </section>
 
 <!-- PARTNERS -->
 <div class="partners">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Autodesk_Revit_Logo.png/800px-Autodesk_Revit_Logo.png" alt="Revit">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Autodesk_AutoCAD_2020.svg/800px-Autodesk_AutoCAD_2020.svg.png" alt="AutoCAD">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Tekla_Structures_Logo.svg/800px-Tekla_Structures_Logo.svg.png" alt="Tekla">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Trimble_logo.svg/800px-Trimble_logo.svg.png" alt="Trimble Navisworks">
+    <img src="images/Autodesk_AutoCAD-logo.png" alt="AutoCAD">
+    <img src="images/Autodesk_Revit_Logo.png" alt="Revit">
+    <img src="images/Civil 3D-Logo.png" alt="Civil 3D">
 </div>
+
+<!-- RELATED SERVICES -->
+<section class="additional section">
+    <div class="container">
+        <h2>Related CAD Services</h2>
+        <div class="additional-grid">
+            <div class="additional-item">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF to CAD</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-cubes"></i>
+                <h3>Point Cloud to CAD</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>2D Drafting</h3>
+            </div>
+            <div class="additional-item">
+                <i class="fas fa-cube"></i>
+                <h3>3D Modeling</h3>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:60px;">
+            <a href="index.html" class="btn btn-gold">View All Services</a>
+        </div>
+    </div>
+</section>
 
 <!-- TESTIMONIALS -->
 <section class="section" style="background:#001f3f;color:#fff;">
     <div class="container">
-        <h2>Client Testimonials</h2>
-        <p style="font-size:20px;max-width:900px;margin:0 auto 60px;">
-            Join 5000+ satisfied clients who transformed their projects with our professional BIM services.
-        </p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px">
-            <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
-                <p>"PRO CAD DRAFTER's BIM coordination saved us $450,000 in rework costs on our 42-story project. Their clash detection was impeccable."</p>
-                <strong>- David Johnson, Project Director</strong><br>★★★★★
+        <h2>Client Feedback</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"Converted our entire archive of paper drawings to CAD perfectly. Layers and dimensions are spot-on!"</p>
+                <strong>- Robert Chen, Architect</strong><br>★★★★★
             </div>
-            <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
-                <p>"The most accurate Revit models we've ever received. Their attention to LOD 400 details helped us win the bid."</p>
-                <strong>- Sarah Mitchell, Lead Architect</strong><br>★★★★★
+            <div class="testimonial">
+                <p>"Fast and accurate PDF to DWG conversion. Saved us months of redrawing time for our renovation project."</p>
+                <strong>- Linda Park, Project Manager</strong><br>★★★★★
             </div>
-            <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px">
-                <p>"Outstanding 4D scheduling and 5D cost integration. Reduced our project timeline by 18%."</p>
-                <strong>- Michael Chen, Construction Manager</strong><br>★★★★★
+            <div class="testimonial">
+                <p>"Excellent cleanup of old scanned plans. The files are now fully editable and match our CAD standards."</p>
+                <strong>- Mark Thompson, Engineer</strong><br>★★★★★
             </div>
         </div>
     </div>
@@ -269,7 +318,7 @@
 <footer>
     <div class="container footer-grid">
         <div>
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9Ijc1IiB2aWV3Qm94PSIwIDAgMjYwIDc1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHdpZHRoPSIyNjAiIGhlaWdodD0iNzUiIHJ4PSIyMCIgZmlsbD0iI2YwYWQ0ZSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU1LDE1KSI+CiAgICA8cGF0aCBkPSJNMCAwIEw2MCwwIEw2MCw0NSBMMzAsNjUgTDAgNDUgWiIgZmlsbD0iIzAwMWYzZiIvPgogICAgPHBhdGggZD0iTTMwLDIyIEw3OCwyMiBMNzgsNjUgTDMwLDY1IFoiIGZpbGw9IiMwMDFmM2YiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNDUiIHI9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNyIvPgogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSI0NSIgcj0iMTAiIGZpbGw9IiNmZmYiLz4KICA8L2c+CiAgPHRleHQgeD0iMTAwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMDAxZjNmIj5QUk8gQ0FEIERSQUZURVI8L3RleHQ+Cjwvc3ZnPg==" alt="PRO CAD DRAFTER" style="height:65px;">
+            <img src="images/logo.png" alt="PRO CAD DRAFTER" style="height:65px;">
             <p style="margin-top:20px;">Expert CAD Drafting & BIM Services Worldwide</p>
         </div>
         <div class="footer-links">
@@ -279,7 +328,7 @@
             <a href="contact.html">Contact</a>
         </div>
         <div class="social">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/company/pro-cad-drafter"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
