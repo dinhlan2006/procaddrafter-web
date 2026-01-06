@@ -170,9 +170,9 @@
         <h2>Our Team</h2>
         <div class="team">
             <div class="team-member">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" alt="John Doe - Lead CAD Engineer">
-                <h3>John Doe</h3>
-                <p>Lead CAD Engineer with 15+ years of experience in 3D modeling and BIM coordination.</p>
+                <img src="images/Hien Ngo.JPG" alt="Hien Ngo - Lead CAD Engineer">
+                <h3>Hien Ngo</h3>
+                <p>Lead CAD Engineer with 10+ years of experience in 3D modeling and BIM coordination.</p>
             </div>
             <div class="team-member">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" alt="Jane Smith - Senior Architect">
@@ -212,38 +212,43 @@
     </div>
 </section>
 
-<!-- OUR LOCATION -->
-<section class="section" style="background:#f8f9fa;">
-    <div class="container">
-        <h2>Our Location</h2>
-        <p style="text-align:center;font-size:20px;max-width:800px;margin:auto;">
-            <strong>Address:</strong> D115 Street, Ward Tân Mỹ, Ho Chi Minh City, Vietnam<br>
-            <strong>Phone:</strong> +84 788 639 487<br>
-            <strong>Email:</strong> procaddrafter.com@gmail.com
-        </p>
-        <div class="map" style="margin-top:50px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.381693171125!2d106.69573951477503!3d10.77682936234959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f2b5e5e5e5e%3A0x1234567890abcdef!2sPro%20CAD%20Drafter!5e0!3m2!1sen!2s!4v1699745523000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-</section>
 
-<!-- CONTACT FORM -->
+<!-- CONTACT INFO & FORM -->
 <section class="section">
     <div class="container">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <form>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="6" placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div style="margin-top:40px;">
-                <h3 style="text-align:center;margin-bottom:20px;">Upload Your Project Plans</h3>
-                <form>
-                    <input type="file" accept=".dwg,.pdf,.jpg,.png,.zip" style="padding:15px;">
-                    <button type="submit" style="margin-top:20px;">Upload Project</button>
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> D115 Street, Ward Tân Mỹ, Ho Chi Minh City, Vietnam</p>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +84 788 639 487</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> procaddrafter.com@gmail.com</p>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.381693171125!2d106.69573951477503!3d10.77682936234959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f2b5e5e5e5e%3A0x1234567890abcdef!2sPro%20CAD%20Drafter!5e0!3m2!1sen!2s!4v1699745523000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="contact-form" id="contact-form">
+                <h3 style="text-align:center;margin-bottom:30px;">Send Us A Message</h3>
+                <form action="https://formspree.io/f/mzzjkqaw" method="POST">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="_replyto" placeholder="Email Address" required>
+                    <input type="text" name="phone" placeholder="Phone Number">
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" rows="8" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
                 </form>
+                <div class="success-message" id="success-message">
+                    <i class="fas fa-check-circle" style="font-size:30px;color:#28a745;"></i><br>
+                    Thank you! Your message has been sent successfully. We will get back to you soon.
+                </div>
+
+                <div class="upload-form" id="upload" style="margin-top:60px;">
+                    <h3 style="text-align:center;margin-bottom:20px;">Upload Your Project Plans</h3>
+                    <p style="text-align:center;margin-bottom:30px;">
+                        To send large files (DWG, PDF, ZIP...), please use the message form above and mention "File Upload" in the subject.<br>
+                        We'll reply with a secure upload link.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -269,6 +274,13 @@
     </div>
     <p style="text-align:center;color:#888;margin-top:50px;">© 2025 PRO CAD DRAFTER. All Rights Reserved.</p>
 </footer>
+
+<script>
+// Hiển thị thông báo thành công sau khi submit (Formspree sẽ redirect về trang với ?success)
+if (window.location.search.includes('success')) {
+    document.getElementById('success-message').style.display = 'block';
+}
+</script>
 
 </body>
 </html>
